@@ -1,5 +1,5 @@
-import React from 'react';
-import { Download, Info, MessageCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Download, Info, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { categories } from '../data/categories';
 import { UIStrings, guideSteps } from '../data/strings';
 import { FormItem, I18nString, LangId } from '../types';
@@ -15,7 +15,11 @@ interface Props {
   onFeedback: () => void;
 }
 
-const DetailView: React.FC<Props> = ({ form, t, lang, isDownloading, onDownload, onFeedback }) => (
+const DetailView: React.FC<Props> = ({ form, t, lang, isDownloading, onDownload, onFeedback }) => {
+  const [guideOpen, setGuideOpen] = useState(false);
+  const guideImgs = form.guideImages?.[lang] ?? [];
+
+  return (
   <div className="animate-slide-up pb-28">
 
     {/* ── 서류명 + 카테고리 ── */}
@@ -32,9 +36,34 @@ const DetailView: React.FC<Props> = ({ form, t, lang, isDownloading, onDownload,
     </div>
 
     {/* ── 서식 뷰어 (핀치줌 + 핫스팟) ── */}
-    <div className="px-4 mb-7">
-      <FormViewer form={form} t={t} />
+    <div className="px-4 mb-5">
+      <FormViewer form={form} t={t} lang={lang} />
     </div>
+
+    {/* ── 안내사항 (접기/펼치기) ── */}
+    {guideImgs.length > 0 && (
+      <div className="px-4 mb-5">
+        <button
+          onClick={() => setGuideOpen(o => !o)}
+          className="w-full flex items-center justify-between px-4 py-3 bg-gusring-bg rounded-2xl border border-gusring-border"
+        >
+          <div className="flex items-center gap-2">
+            <Info size={15} className="text-amber-600" />
+            <span className="text-[13px] font-black text-gusring-text">
+              작성 안내사항 보기 ({guideImgs.length}페이지)
+            </span>
+          </div>
+          {guideOpen ? <ChevronUp size={16} className="text-gusring-text-sub" /> : <ChevronDown size={16} className="text-gusring-text-sub" />}
+        </button>
+        {guideOpen && (
+          <div className="mt-2 space-y-2">
+            {guideImgs.map((src, i) => (
+              <img key={i} src={src} alt={`안내사항 ${i + 1}`} className="w-full rounded-2xl border border-gusring-border" />
+            ))}
+          </div>
+        )}
+      </div>
+    )}
 
     {/* ── 작성 안내 ── */}
     <div className="px-5">
@@ -66,7 +95,8 @@ const DetailView: React.FC<Props> = ({ form, t, lang, isDownloading, onDownload,
     </div>
 
   </div>
-);
+  );
+};
 
 /* ── 하단 고정 버튼 바 ── */
 export const DetailViewBottomBar: React.FC<{

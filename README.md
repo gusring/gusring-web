@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# Create React App 시작하기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)으로 부트스트랩되었습니다.
 
-## Available Scripts
+## 사용 가능한 스크립트
 
-In the project directory, you can run:
+프로젝트 디렉터리에서 다음 명령을 실행할 수 있습니다.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+개발 모드로 앱을 실행합니다.\
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+코드를 수정하면 페이지가 자동으로 다시 로드됩니다.\
+콘솔에서 Lint 오류도 표시됩니다.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+인터랙티브 워치 모드에서 테스트 러너를 실행합니다.\
+자세한 내용은 [테스트 실행](https://facebook.github.io/create-react-app/docs/running-tests) 문서를 참고하세요.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+프로덕션 용도로 앱을 `build` 폴더에 빌드합니다.\
+React를 프로덕션 모드로 번들하고 빌드를 최적화합니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+빌드는 압축되고 파일 이름에 해시가 포함됩니다.\
+이제 앱을 배포할 준비가 되었습니다!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+배포에 대한 자세한 내용은 [배포](https://facebook.github.io/create-react-app/docs/deployment) 문서를 참고하세요.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**주의: 이 작업은 되돌릴 수 없습니다. `eject`를 실행하면 돌아올 수 없습니다!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+빌드 도구 및 설정이 만족스럽지 않은 경우 언제든지 `eject` 할 수 있습니다. 이 명령은 프로젝트에서 단일 빌드 종속성을 제거합니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+대신 모든 설정 파일과 종속 도구(webpack, Babel, ESLint 등)를 프로젝트에 복사하여 완전히 제어할 수 있도록 합니다. `eject`를 제외한 다른 명령은 계속 작동하지만, 복사된 스크립트를 참조하므로 직접 수정할 수 있습니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`eject`를 반드시 사용할 필요는 없습니다. 기본 기능 세트는 소규모 및 중간 규모 배포에 적합하며, 필요할 때까지 꼭 사용하지 않아도 됩니다.
 
-## Learn More
+## 더 알아보기
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Create React App 문서](https://facebook.github.io/create-react-app/docs/getting-started)에서 더 많은 정보를 확인할 수 있습니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+React를 배우려면 [React 문서](https://reactjs.org/)를 참고하세요.

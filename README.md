@@ -44,3 +44,7 @@ React를 프로덕션 모드로 번들하고 빌드를 최적화합니다.
 [Create React App 문서](https://facebook.github.io/create-react-app/docs/getting-started)에서 더 많은 정보를 확인할 수 있습니다.
 
 React를 배우려면 [React 문서](https://reactjs.org/)를 참고하세요.
+
+## 완료 상태
+
+- ✅ 오케

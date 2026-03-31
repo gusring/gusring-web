@@ -9,7 +9,7 @@ import Header        from './components/Header';
 import MenuOverlay   from './components/MenuOverlay';
 import LandingView   from './components/LandingView';
 import ListView      from './components/ListView';
-import DetailView    from './components/DetailView';
+import DetailView, { DetailViewBottomBar } from './components/DetailView';
 import FeedbackThread  from './components/FeedbackThread';
 
 import { FormItem, LangId, ViewName } from './types';
@@ -192,6 +192,17 @@ const App: React.FC = () => {
           />
         ) : null}
       </main>
+
+      {/* 상세 화면 하단 고정 버튼 바 */}
+      {view === 'detail' && selectedForm && (
+        <DetailViewBottomBar
+          t={t}
+          lang={currentLang}
+          isDownloading={isDownloading}
+          onDownload={handleDownload}
+          onFeedback={() => setIsFeedbackOpen(true)}
+        />
+      )}
 
     </div>
     </div>

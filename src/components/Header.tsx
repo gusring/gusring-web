@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Menu } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Language, LangId, ViewName } from '../types';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
   onMenuOpen: () => void;
 }
 
-const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLanding, onMenuOpen }) => {
+const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLanding }) => {
   const currentLanguage = languages.find(l => l.id === currentLang);
 
   return (
@@ -45,13 +45,6 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
             className="btn-press h-9 px-3 bg-gusring-yellow-soft rounded-xl text-[11px] font-black text-amber-800 border border-amber-100 shadow-card active:scale-95 transition-transform"
           >
             {currentLanguage?.icon} {currentLang.toUpperCase()}
-          </button>
-          <button
-            onClick={onMenuOpen}
-            className="btn-press w-9 h-9 flex items-center justify-center rounded-2xl hover:bg-gusring-bg text-gusring-text-sub transition-colors"
-            aria-label="메뉴 열기"
-          >
-            <Menu size={22} />
           </button>
         </div>
       </div>

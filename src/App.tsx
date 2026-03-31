@@ -5,7 +5,6 @@ import { formsList }   from './data/forms';
 import { useTranslate } from './hooks/useTranslate';
 
 import Header        from './components/Header';
-import MenuOverlay   from './components/MenuOverlay';
 import LandingView   from './components/LandingView';
 import ListView      from './components/ListView';
 import DetailView, { DetailViewBottomBar } from './components/DetailView';
@@ -28,7 +27,6 @@ const App: React.FC = () => {
   const [selectedForm, setSelectedForm]         = useState<FormItem | null>(null);
   const [searchTerm, setSearchTerm]             = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
-  const [isMenuOpen, setIsMenuOpen]             = useState(false);
   const [isDownloading, setIsDownloading]       = useState(false);
   const [isFeedbackOpen, setIsFeedbackOpen]     = useState(false);
   const detailEnterTimeRef                      = useRef<number | null>(null);
@@ -51,7 +49,6 @@ const App: React.FC = () => {
 
   // ── 네비게이션 (메뉴 자동 닫기 포함) ───────────────────────
   const navigateTo = useCallback((nextView: ViewName) => {
-    setIsMenuOpen(false);
     setView(nextView);
   }, []);
 
@@ -159,17 +156,8 @@ const App: React.FC = () => {
         languages={languages}
         onBack={() => navigateTo('list')}
         onLanding={() => navigateTo('landing')}
-        onMenuOpen={() => setIsMenuOpen(true)}
+        onMenuOpen={() => {}}
       />
-
-      {isMenuOpen && (
-        <MenuOverlay
-          t={t}
-          lang={currentLang}
-          onClose={() => setIsMenuOpen(false)}
-          onFeedback={() => { setIsMenuOpen(false); setIsFeedbackOpen(true); }}
-        />
-      )}
 
       {isFeedbackOpen && (
         <FeedbackThread lang={currentLang} onClose={() => setIsFeedbackOpen(false)} />

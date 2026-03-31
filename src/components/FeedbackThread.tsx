@@ -3,6 +3,8 @@ import React, {
 } from 'react';
 import { X, Send, MessageCircle, Wifi, WifiOff } from 'lucide-react';
 import { LangId, FeedbackEntry } from '../types';
+import { UIStrings } from '../data/strings';
+import { useTranslate } from '../hooks/useTranslate';
 import {
   db, collection, addDoc, onSnapshot,
   query, orderBy, serverTimestamp,
@@ -28,17 +30,24 @@ const PLACEHOLDER: Record<LangId, string> = {
 };
 
 // ── 시간 포매터 ──────────────────────────────────────────────
-function timeAgo(date: Date | null): string {
-  if (!date) return '방금 전';
+function timeAgo(date: Date | null, lang: LangId): string {
+  if (!date) return UIStrings.fbJustNow[lang];
   const diffMs  = Date.now() - date.getTime();
   const diffMin = Math.floor(diffMs / 60000);
   const diffHr  = Math.floor(diffMs / 3600000);
   const diffDay = Math.floor(diffMs / 86400000);
-  if (diffMin < 1)  return '방금 전';
-  if (diffMin < 60) return `${diffMin}분 전`;
-  if (diffHr  < 24) return `${diffHr}시간 전`;
-  if (diffDay < 30) return `${diffDay}일 전`;
-  return `${date.getMonth() + 1}월 ${date.getDate()}일`;
+  if (diffMin < 1) return UIStrings.fbJustNow[lang];
+  // For relative time, use locale-appropriate format
+  if (lang === 'ko') {
+    if (diffMin < 60) return `${diffMin}분 전`;
+    if (diffHr  < 24) return `${diffHr}시간 전`;
+    if (diffDay < 30) return `${diffDay}일 전`;
+    return `${date.getMonth() + 1}월 ${date.getDate()}일`;
+  }
+  if (diffMin < 60) return `${diffMin}m ago`;
+  if (diffHr  < 24) return `${diffHr}h ago`;
+  if (diffDay < 30) return `${diffDay}d ago`;
+  return date.toLocaleDateString(lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : lang === 'vi' ? 'vi-VN' : 'en-US', { month: 'short', day: 'numeric' });
 }
 
 // ── 스켈레톤 ────────────────────────────────────────────────
@@ -85,6 +94,7 @@ interface Props {
 }
 
 const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
+  const t = useTranslate(lang);
   const [entries,  setEntries]  = useState<FeedbackEntry[]>([]);
   const [loading,  setLoading]  = useState(true);
   const [text,     setText]     = useState('');
@@ -169,9 +179,9 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
     if (day === prev_day) return null;
     const label = (() => {
       const diffDay = Math.floor((Date.now() - entry.createdAt.getTime()) / 86400000);
-      if (diffDay === 0) return '오늘';
-      if (diffDay === 1) return '어제';
-      return `${entry.createdAt.getMonth() + 1}월 ${entry.createdAt.getDate()}일`;
+      if (diffDay === 0) return t(UIStrings.fbToday);
+      if (diffDay === 1) return t(UIStrings.fbYesterday);
+      return entry.createdAt.toLocaleDateString(lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : lang === 'vi' ? 'vi-VN' : lang === 'ko' ? 'ko-KR' : 'en-US', { month: 'short', day: 'numeric' });
     })();
     return (
       <div key={`div-${entry.id}`} className="flex items-center gap-3 my-2">
@@ -210,9 +220,9 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
               <MessageCircle size={18} className="text-amber-900" />
             </div>
             <div>
-              <h2 className="font-black text-gusring-text text-base leading-tight">피드백</h2>
+              <h2 className="font-black text-gusring-text text-base leading-tight">{t(UIStrings.fbTitle)}</h2>
               <p className="text-[11px] text-gusring-text-hint font-medium">
-                {loading ? '불러오는 중...' : `${entries.length}개의 메시지`}
+                {loading ? t(UIStrings.fbLoading) : `${entries.length} ${t(UIStrings.fbTitle)}`}
               </p>
             </div>
           </div>
@@ -220,8 +230,8 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
             {/* Firebase 연결 상태 */}
             <div className={`flex items-center gap-1 px-2 py-1 rounded-xl text-[10px] font-bold ${isFirebaseConfigured ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'}`}>
               {isFirebaseConfigured
-                ? <><Wifi size={11} /> 연결됨</>
-                : <><WifiOff size={11} /> 미연결</>
+                ? <><Wifi size={11} /> {t(UIStrings.fbConnected)}</>
+                : <><WifiOff size={11} /> {t(UIStrings.fbDisconnected)}</>
               }
             </div>
             <button
@@ -255,10 +265,8 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
           {isFirebaseConfigured && !loading && entries.length === 0 && (
             <div className="flex flex-col items-center justify-center py-16 text-center gap-3">
               <div className="text-5xl">💬</div>
-              <p className="font-black text-gusring-text text-base">첫 번째 메시지를 남겨보세요</p>
-              <p className="text-gusring-text-sub text-sm">
-                여러분의 솔직한 피드백이<br />서비스 개선에 큰 힘이 돼요.
-              </p>
+              <p className="font-black text-gusring-text text-base">{t(UIStrings.fbEmpty)}</p>
+              <p className="text-gusring-text-sub text-sm">{t(UIStrings.fbEmptyDesc)}</p>
             </div>
           )}
 
@@ -285,7 +293,7 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
                   </p>
                   {/* 시간 */}
                   <p className="text-gusring-text-hint text-[11px] font-medium self-end">
-                    {timeAgo(entry.createdAt)}
+                    {timeAgo(entry.createdAt, lang)}
                   </p>
                 </div>
               </React.Fragment>
@@ -302,7 +310,7 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
             <div className="flex items-center gap-1.5">
               <span className="text-sm">{meta.flag}</span>
               <span className={`px-2 py-0.5 rounded-full text-[10px] font-black ${meta.badge}`}>
-                {meta.label}로 작성 중
+                {lang === 'en' || lang === 'vi' ? `${t(UIStrings.fbWritingIn)} ${meta.label}` : `${meta.label}${t(UIStrings.fbWritingIn)}`}
               </span>
             </div>
 
@@ -344,7 +352,7 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
             </div>
 
             <p className="text-[10px] text-gusring-text-hint text-center font-medium">
-              익명으로 전송됩니다 · Cmd+Enter로 전송
+              {t(UIStrings.fbAnonymous)} · {t(UIStrings.fbSendHint)}
             </p>
           </div>
         )}

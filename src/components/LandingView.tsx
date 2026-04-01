@@ -18,6 +18,7 @@ const LandingView: React.FC<Props> = ({ languages, onSelect }) => (
           src="/gusring_logo.png"
           alt="Gusring"
           className="w-36 sm:w-44 h-auto object-contain rounded-2xl mb-3"
+          style={{ mixBlendMode: 'multiply' }}
         />
         <div className="px-4 py-1.5 bg-gusring-yellow-soft text-amber-800 text-[11px] font-black rounded-full uppercase tracking-widest shadow-card border border-amber-100">
           Geumcheon Smart Ring

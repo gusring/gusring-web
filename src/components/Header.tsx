@@ -33,6 +33,7 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
                 src="/gusring_logo.png"
                 alt="Gusring"
                 className="h-9 w-auto object-contain rounded-xl"
+                style={{ mixBlendMode: 'multiply' }}
               />
             </button>
           )}

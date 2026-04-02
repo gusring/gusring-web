@@ -8,7 +8,6 @@ interface Props {
   languages: Language[];
   onBack: () => void;
   onLanding: () => void;
-  onMenuOpen: () => void;
 }
 
 const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLanding }) => {

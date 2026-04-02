@@ -84,17 +84,6 @@ export function trackFormDownload(params: {
   });
 }
 
-/** 공유 버튼 클릭 */
-export function trackFormShare(params: {
-  formId:    number;
-  formTitle: string;
-}): void {
-  send('form_share', {
-    form_id:    params.formId,
-    form_title: params.formTitle,
-  });
-}
-
 // ── 검색 & 필터 ──────────────────────────────────────────────
 
 /** 검색 입력 (300ms debounce 권장) */
@@ -118,19 +107,9 @@ export function trackCategoryFilter(category: string, lang: string): void {
 
 // ── 버튼 클릭 ────────────────────────────────────────────────
 
-/** AI 상담 버튼 클릭 */
-export function trackAiConsultClick(lang: string): void {
-  send('ai_consult_click', { language: lang });
-}
-
 /** 피드백 버튼 클릭 */
 export function trackFeedbackClick(lang: string): void {
   send('feedback_click', { language: lang });
-}
-
-/** 구청 위치 버튼 클릭 */
-export function trackOfficeLocationClick(lang: string): void {
-  send('office_location_click', { language: lang });
 }
 
 // ── 체류 시간 ────────────────────────────────────────────────

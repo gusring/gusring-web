@@ -10,9 +10,6 @@ interface Props {
   form: FormItem;
   t: (obj: I18nString) => string;
   lang: LangId;
-  isDownloading: boolean;
-  onDownload: () => void;
-  onFeedback: () => void;
 }
 
 // ── 가로 스와이프 이미지 캐러셀 ────────────────────────────────

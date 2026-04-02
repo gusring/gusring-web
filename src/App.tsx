@@ -156,7 +156,6 @@ const App: React.FC = () => {
         languages={languages}
         onBack={() => navigateTo('list')}
         onLanding={() => navigateTo('landing')}
-        onMenuOpen={() => {}}
       />
 
       {isFeedbackOpen && (
@@ -180,9 +179,6 @@ const App: React.FC = () => {
             form={selectedForm}
             t={t}
             lang={currentLang}
-            isDownloading={isDownloading}
-            onDownload={handleDownload}
-            onFeedback={() => setIsFeedbackOpen(true)}
           />
         ) : null}
       </main>

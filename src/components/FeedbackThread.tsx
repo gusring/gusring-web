@@ -5,7 +5,7 @@ import { UIStrings } from '../data/strings';
 import { useTranslate } from '../hooks/useTranslate';
 
 // ── 구글폼 링크 (여기에 실제 링크로 교체하세요) ──────────────
-const GOOGLE_FORM_URL = 'https://forms.gle/XXXXXXXXXXXXXXXX';
+const GOOGLE_FORM_URL = 'https://forms.gle/wmRLR4rZjTGkge2u6';
 
 // ── 언어별 안내 문구 ──────────────────────────────────────────
 const FEEDBACK_DESC: Record<LangId, string> = {

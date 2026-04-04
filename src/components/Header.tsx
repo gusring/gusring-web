@@ -21,7 +21,7 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
           {view === 'detail' ? (
             <button
               onClick={onBack}
-              className="btn-press p-2 -ml-2 rounded-2xl hover:bg-gusring-yellow-soft text-amber-600 transition-colors"
+              className="btn-press p-2 -ml-2 rounded-2xl hover:bg-gusring-yellow-soft text-gusring-brand-600 transition-colors"
               aria-label="뒤로가기"
             >
               <ArrowLeft size={22} />
@@ -42,7 +42,7 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
         <div className="flex items-center gap-2">
           <button
             onClick={onLanding}
-            className="btn-press h-9 px-3 bg-gusring-yellow-soft rounded-xl text-[11px] font-black text-amber-800 border border-amber-100 shadow-card active:scale-95 transition-transform"
+            className="btn-press h-9 px-3 bg-gusring-yellow-soft rounded-xl text-[11px] font-black text-gusring-brand-700 border border-gusring-brand-100 shadow-card active:scale-95 transition-transform"
           >
             {currentLanguage?.icon} {currentLang.toUpperCase()}
           </button>

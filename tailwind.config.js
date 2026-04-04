@@ -16,16 +16,31 @@ module.exports = {
       // ── 색상 토큰 ─────────────────────────────────────────
       colors: {
         gusring: {
-          bg:        '#F5F6FA',
+          bg:        '#FAF8F5',
           surface:   '#FFFFFF',
-          yellow:    '#FCD34D',
-          'yellow-press': '#F6C90E',
-          'yellow-soft':  '#FEF9C3',
+          // 브랜드 메인 컬러 (로고 테라코타 오렌지)
+          yellow:         '#D4522A',
+          'yellow-press': '#B8411C',
+          'yellow-soft':  '#FDF0EB',
           text:      '#111827',
           'text-sub': '#6B7280',
           'text-hint': '#9CA3AF',
           border:    '#F0F1F5',
           'border-strong': '#E5E7EB',
+          // 브랜드 컬러 스케일
+          brand: {
+            50:  '#FDF4F0',
+            100: '#FAE4DA',
+            200: '#F4C5B0',
+            300: '#ECA083',
+            400: '#E07355',
+            500: '#D4522A',
+            600: '#B8411C',
+            700: '#8E3214',
+            800: '#6B240D',
+            900: '#4D1A09',
+            950: '#2E0E04',
+          },
         },
       },
 
@@ -34,8 +49,8 @@ module.exports = {
         'card':    '0 2px 12px 0 rgba(0,0,0,0.06)',
         'card-md': '0 4px 20px 0 rgba(0,0,0,0.09)',
         'card-lg': '0 8px 32px 0 rgba(0,0,0,0.12)',
-        'yellow':  '0 6px 24px 0 rgba(252,211,77,0.45)',
-        'yellow-sm': '0 3px 12px 0 rgba(252,211,77,0.35)',
+        'yellow':  '0 6px 24px 0 rgba(212,82,42,0.35)',
+        'yellow-sm': '0 3px 12px 0 rgba(212,82,42,0.25)',
         'inset-sm': 'inset 0 1px 3px rgba(0,0,0,0.06)',
         'none': 'none',
       },

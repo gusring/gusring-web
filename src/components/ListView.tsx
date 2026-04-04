@@ -94,7 +94,7 @@ const ListView: React.FC<Props> = ({
     {/* 서식 목록 */}
     <div className="grid grid-cols-1 gap-3 pb-28">
       {/* 카운터 */}
-      <div className="text-[10px] text-amber-600 font-black px-1 uppercase tracking-[0.15em]">
+      <div className="text-[10px] text-gusring-brand-600 font-black px-1 uppercase tracking-[0.15em]">
         {selectedCategory === 'ALL'
           ? t(UIStrings.catAll)
           : t(categories[selectedCategory as keyof typeof categories])}{' '}
@@ -110,13 +110,13 @@ const ListView: React.FC<Props> = ({
           style={{ animationDelay: `${idx * 30}ms` }}
         >
           {/* 아이콘 */}
-          <div className="w-12 h-12 bg-gusring-yellow-soft group-hover:bg-gusring-yellow rounded-[18px] flex items-center justify-center text-amber-400 group-hover:text-amber-900 shrink-0 transition-all duration-200 shadow-inset-sm">
+          <div className="w-12 h-12 bg-gusring-yellow-soft group-hover:bg-gusring-yellow rounded-[18px] flex items-center justify-center text-gusring-brand-400 group-hover:text-white shrink-0 transition-all duration-200 shadow-inset-sm">
             <FileText size={22} />
           </div>
 
           {/* 텍스트 */}
           <div className="flex-1 min-w-0">
-            <p className="text-[9px] font-black text-amber-500 uppercase mb-1 tracking-wider">
+            <p className="text-[9px] font-black text-gusring-brand-500 uppercase mb-1 tracking-wider">
               {t(categories[form.cat])}
             </p>
             <h3 className="font-bold text-gusring-text text-[15px] leading-snug truncate">
@@ -127,7 +127,7 @@ const ListView: React.FC<Props> = ({
             </p>
           </div>
 
-          <ChevronRight size={16} className="text-gusring-border-strong group-hover:text-amber-500 shrink-0 transition-colors" />
+          <ChevronRight size={16} className="text-gusring-border-strong group-hover:text-gusring-brand-500 shrink-0 transition-colors" />
         </button>
       ))}
 

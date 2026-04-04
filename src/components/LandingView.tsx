@@ -1,65 +1,100 @@
 import React from 'react';
-import { ChevronRight } from 'lucide-react';
 import { Language, LangId } from '../types';
-import { UIStrings } from '../data/strings';
 
 interface Props {
   languages: Language[];
   onSelect: (lang: LangId) => void;
 }
 
-const LandingView: React.FC<Props> = ({ languages, onSelect }) => (
-  <div className="min-h-screen bg-gusring-bg flex flex-col items-center justify-center px-5 py-8 sm:px-8 font-sans safe-top safe-bottom">
-    <div className="w-full max-w-sm sm:max-w-md text-center space-y-7 sm:space-y-8">
+const LandingView: React.FC<Props> = ({ languages, onSelect }) => {
+  // 홀수면 마지막 항목을 full-width로 분리
+  const isOdd = languages.length % 2 !== 0;
+  const gridLangs = isOdd ? languages.slice(0, -1) : languages;
+  const lastLang  = isOdd ? languages[languages.length - 1] : null;
 
-      {/* 로고 */}
-      <div className="flex flex-col items-center animate-slide-up" style={{ animationDelay: '0ms' }}>
-        <img
-          src="/gusring_logo.png"
-          alt="Gusring"
-          className="w-36 sm:w-44 h-auto object-contain rounded-2xl mb-3"
-          style={{ mixBlendMode: 'multiply' }}
+  return (
+    <div className="relative min-h-screen bg-gusring-bg flex flex-col items-center justify-between overflow-hidden safe-top safe-bottom">
+
+      {/* 배경 데코 — 연한 브랜드 원형 */}
+      <div
+        className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full"
+        style={{ background: 'radial-gradient(circle, rgba(212,82,42,0.07) 0%, transparent 70%)' }}
+      />
+      <div
+        className="pointer-events-none absolute -bottom-16 -left-20 w-56 h-56 rounded-full"
+        style={{ background: 'radial-gradient(circle, rgba(212,82,42,0.05) 0%, transparent 70%)' }}
+      />
+
+      {/* ── 상단: 로고 ─────────────────────────────────────── */}
+      <div className="flex flex-col items-center justify-center flex-1 px-8 pt-10 pb-4 w-full">
+        <div className="animate-scale-in" style={{ animationDelay: '0ms' }}>
+          <img
+            src="/gusring_logo.png"
+            alt="Gusring"
+            className="w-52 sm:w-60 h-auto object-contain"
+            style={{ mixBlendMode: 'multiply' }}
+          />
+        </div>
+
+        {/* 브랜드 구분선 */}
+        <div
+          className="mt-8 mb-8 w-10 h-[3px] rounded-full animate-fade-in"
+          style={{ background: '#D4522A', animationDelay: '150ms' }}
         />
-        <div className="px-4 py-1.5 bg-gusring-yellow-soft text-amber-800 text-[11px] font-black rounded-full uppercase tracking-widest shadow-card border border-amber-100">
-          Geumcheon Smart Ring
+
+        {/* ── 언어 그리드 ────────────────────────────────── */}
+        <div className="w-full max-w-xs sm:max-w-sm space-y-3">
+
+          {/* 2-column 그리드 */}
+          <div className="grid grid-cols-2 gap-3">
+            {gridLangs.map((lang, idx) => (
+              <button
+                key={lang.id}
+                onClick={() => onSelect(lang.id)}
+                className="bg-gusring-surface rounded-[28px] pt-6 pb-5 px-3
+                           flex flex-col items-center gap-2
+                           btn-press shadow-card
+                           hover:-translate-y-1.5 hover:shadow-card-md
+                           transition-all duration-200 ease-spring animate-scale-in"
+                style={{ animationDelay: `${180 + idx * 60}ms` }}
+              >
+                <span className="text-[42px] leading-none">{lang.icon}</span>
+                <span className="font-black text-gusring-text text-[15px] tracking-tight">
+                  {lang.label}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* 홀수일 때 마지막 항목 — full-width */}
+          {lastLang && (
+            <button
+              onClick={() => onSelect(lastLang.id)}
+              className="w-full bg-gusring-surface rounded-[28px] py-4 px-6
+                         flex items-center justify-center gap-4
+                         btn-press shadow-card
+                         hover:-translate-y-1.5 hover:shadow-card-md
+                         transition-all duration-200 ease-spring animate-scale-in"
+              style={{ animationDelay: `${180 + gridLangs.length * 60}ms` }}
+            >
+              <span className="text-[36px] leading-none">{lastLang.icon}</span>
+              <span className="font-black text-gusring-text text-[15px] tracking-tight">
+                {lastLang.label}
+              </span>
+            </button>
+          )}
         </div>
       </div>
 
-      {/* 언어 선택 */}
-      <div
-        className="grid grid-cols-1 gap-3 w-full animate-slide-up"
-        style={{ animationDelay: '80ms' }}
-      >
-        <p className="text-gusring-text-sub font-bold mb-1 text-sm">{UIStrings.landing.ko}</p>
-
-        {languages.map((lang, idx) => (
-          <button
-            key={lang.id}
-            onClick={() => onSelect(lang.id)}
-            className="toss-card btn-press flex items-center justify-between p-4 sm:p-5 rounded-4xl text-left group"
-            style={{ animationDelay: `${120 + idx * 50}ms` }}
-          >
-            <div className="flex items-center gap-4">
-              <span className="text-3xl filter drop-shadow-sm">{lang.icon}</span>
-              <span className="font-extrabold text-gusring-text text-lg sm:text-xl group-hover:text-amber-700 transition-colors">
-                {lang.label}
-              </span>
-            </div>
-            <div className="w-10 h-10 rounded-full bg-gusring-bg flex items-center justify-center group-hover:bg-gusring-yellow transition-colors duration-200">
-              <ChevronRight size={18} className="text-gusring-text-hint group-hover:text-amber-900 transition-colors" />
-            </div>
-          </button>
-        ))}
-      </div>
-
+      {/* ── 푸터 ──────────────────────────────────────────── */}
       <p
-        className="text-[10px] text-gusring-text-hint font-medium animate-fade-in"
-        style={{ animationDelay: '500ms' }}
+        className="text-[10px] text-gusring-text-hint font-medium pb-8 tracking-wide animate-fade-in"
+        style={{ animationDelay: '600ms' }}
       >
-        © 2026 Team EL. Geumcheon-gu Living Lab Project.
+        © 2026 Team EL · Geumcheon-gu Living Lab
       </p>
     </div>
-  </div>
-);
+  );
+};
 
 export default LandingView;

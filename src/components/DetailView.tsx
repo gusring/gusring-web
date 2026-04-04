@@ -93,7 +93,7 @@ const AccordionSection: React.FC<{
         onClick={() => setOpen(o => !o)}
         className="w-full flex items-center gap-4 px-5 py-4 text-left btn-press"
       >
-        <div className="w-8 h-8 bg-gusring-yellow text-amber-950 rounded-full flex items-center justify-center text-sm font-black shrink-0">
+        <div className="w-8 h-8 bg-gusring-yellow text-white rounded-full flex items-center justify-center text-sm font-black shrink-0">
           {index}
         </div>
         <span className="flex-1 font-black text-[15px] text-gusring-text">{label}</span>
@@ -123,7 +123,7 @@ const DetailView: React.FC<Props> = ({ form, t, lang }) => {
 
       {/* 서류명 + 카테고리 */}
       <div className="px-5 pt-5 pb-5">
-        <span className="inline-flex items-center bg-gusring-yellow-soft text-amber-700 text-[10px] font-black px-2.5 py-1 rounded-full mb-2.5 uppercase tracking-tight">
+        <span className="inline-flex items-center bg-gusring-yellow-soft text-gusring-brand-700 text-[10px] font-black px-2.5 py-1 rounded-full mb-2.5 uppercase tracking-tight">
           {t(categories[form.cat])}
         </span>
         <h2 className="text-xl sm:text-2xl font-black text-gusring-text tracking-tight leading-tight mb-1.5">
@@ -251,13 +251,13 @@ export const DetailViewFAB: React.FC<{
                      active:scale-95 active:brightness-105
                      transition-[transform,filter] duration-150 disabled:opacity-60"
         >
-          <span className="text-amber-950 text-[13px] font-black tracking-tight whitespace-nowrap">
+          <span className="text-white text-[13px] font-black tracking-tight whitespace-nowrap">
             {isDownloading ? t(UIStrings.downloading) : t(UIStrings.download)}
           </span>
-          <div className="w-8 h-8 bg-amber-900/10 rounded-xl flex items-center justify-center">
+          <div className="w-8 h-8 bg-white/20 rounded-xl flex items-center justify-center">
             {isDownloading
               ? <span className="text-sm animate-spin inline-block">⏳</span>
-              : <Download size={16} className="text-amber-950" />
+              : <Download size={16} className="text-white" />
             }
           </div>
         </button>
@@ -271,7 +271,7 @@ export const DetailViewFAB: React.FC<{
         >
           <Plus
             size={24}
-            className="text-amber-950 transition-transform duration-300"
+            className="text-white transition-transform duration-300"
             style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)' }}
           />
         </button>

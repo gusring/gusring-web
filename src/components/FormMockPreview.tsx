@@ -60,11 +60,11 @@ const FormMockPreview: React.FC<Props> = ({ form, t, lang }) => {
       </div>
 
       {/* 서식번호 & 카테고리 뱃지 */}
-      <div className="flex justify-between items-center px-4 py-1.5 bg-gusring-yellow-soft border-b border-amber-100">
-        <span style={{ fontSize: 9 }} className="text-amber-700 font-bold">
+      <div className="flex justify-between items-center px-4 py-1.5 bg-gusring-yellow-soft border-b border-gusring-brand-100">
+        <span style={{ fontSize: 9 }} className="text-gusring-brand-700 font-bold">
           서식 No. {String(form.id).padStart(3, '0')}
         </span>
-        <span style={{ fontSize: 9 }} className="text-amber-700 font-bold bg-amber-100 px-2 py-0.5 rounded-full">
+        <span style={{ fontSize: 9 }} className="text-gusring-brand-700 font-bold bg-gusring-brand-100 px-2 py-0.5 rounded-full">
           {form.cat}
         </span>
       </div>

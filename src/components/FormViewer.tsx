@@ -79,7 +79,7 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
       <div className="flex items-center justify-between px-4 py-2.5 bg-gusring-bg border-b border-gusring-border">
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 bg-gusring-yellow rounded-full flex items-center justify-center">
-            <Info size={11} className="text-amber-900" />
+            <Info size={11} className="text-white" />
           </div>
           <span className="text-[11px] font-bold text-gusring-text-sub">
             {scale > 1.1 ? t(UIStrings.zoomHintReset) : t(UIStrings.zoomHint)}
@@ -88,7 +88,7 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
         {scale > 1.1 && (
           <button
             onClick={resetZoom}
-            className="btn-press flex items-center gap-1 px-2.5 py-1 bg-white rounded-xl text-[11px] font-bold text-amber-600 border border-amber-100"
+            className="btn-press flex items-center gap-1 px-2.5 py-1 bg-white rounded-xl text-[11px] font-bold text-gusring-brand-600 border border-gusring-brand-100"
           >
             <ZoomOut size={12} /> {t(UIStrings.zoomReset)}
           </button>

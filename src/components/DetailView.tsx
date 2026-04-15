@@ -4,6 +4,7 @@ import { categories } from '../data/categories';
 import { UIStrings } from '../data/strings';
 import { FormItem, I18nString, LangId } from '../types';
 import FormViewer from './FormViewer';
+import ImageLightbox from './ImageLightbox';
 import { trackFeedbackClick } from '../analytics';
 
 interface Props {
@@ -15,6 +16,7 @@ interface Props {
 // ── 가로 스와이프 이미지 캐러셀 ────────────────────────────────
 const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
   const [current, setCurrent] = useState(0);
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const startX = useRef(0);
   const isDragging = useRef(false);
 
@@ -28,6 +30,7 @@ const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
     if (!isDragging.current) return;
     const diff = startX.current - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+    else setLightboxIdx(current); // 스와이프 없이 탭만 했으면 라이트박스 열기
     isDragging.current = false;
   };
 
@@ -35,9 +38,10 @@ const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
     <div className="select-none">
       {/* 이미지 슬라이드 */}
       <div
-        className="overflow-hidden rounded-2xl"
+        className="overflow-hidden rounded-2xl cursor-zoom-in"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
+        onClick={() => setLightboxIdx(current)}
       >
         <div
           className="flex transition-transform duration-300 ease-out"
@@ -73,6 +77,15 @@ const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
             {current + 1} / {images.length}
           </span>
         </div>
+      )}
+
+      {/* 라이트박스 */}
+      {lightboxIdx !== null && (
+        <ImageLightbox
+          images={images}
+          initialIndex={lightboxIdx}
+          onClose={() => setLightboxIdx(null)}
+        />
       )}
     </div>
   );

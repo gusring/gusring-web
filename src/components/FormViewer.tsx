@@ -1,9 +1,10 @@
 import React, {
   useState, useRef, useCallback, useEffect,
 } from 'react';
-import { ZoomOut, Info } from 'lucide-react';
+import { ZoomOut, Info, Maximize2 } from 'lucide-react';
 import { FormItem, I18nString, LangId } from '../types';
 import FormMockPreview from './FormMockPreview';
+import ImageLightbox from './ImageLightbox';
 import { UIStrings } from '../data/strings';
 
 interface Props {
@@ -22,8 +23,11 @@ const getTouchDist = (t1: React.Touch, t2: React.Touch) => {
 };
 
 const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
-  const [scale, setScale] = useState(1);
-  const [pan, setPan]     = useState({ x: 0, y: 0 });
+  const [scale, setScale]       = useState(1);
+  const [pan, setPan]           = useState({ x: 0, y: 0 });
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const imgSrc = lang ? form.images?.[lang] : undefined;
 
   const initDist  = useRef(0);
   const initScale = useRef(1);
@@ -73,6 +77,7 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
   const resetZoom = () => { setScale(1); setPan({ x: 0, y: 0 }); };
 
   return (
+    <>
     <div className="rounded-3xl overflow-hidden border border-gusring-border bg-white shadow-card">
 
       {/* 힌트 바 */}
@@ -85,14 +90,24 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
             {scale > 1.1 ? t(UIStrings.zoomHintReset) : t(UIStrings.zoomHint)}
           </span>
         </div>
-        {scale > 1.1 && (
-          <button
-            onClick={resetZoom}
-            className="btn-press flex items-center gap-1 px-2.5 py-1 bg-white rounded-xl text-[11px] font-bold text-gusring-brand-600 border border-gusring-brand-100"
-          >
-            <ZoomOut size={12} /> {t(UIStrings.zoomReset)}
-          </button>
-        )}
+        <div className="flex items-center gap-2">
+          {scale > 1.1 && (
+            <button
+              onClick={resetZoom}
+              className="btn-press flex items-center gap-1 px-2.5 py-1 bg-white rounded-xl text-[11px] font-bold text-gusring-brand-600 border border-gusring-brand-100"
+            >
+              <ZoomOut size={12} /> {t(UIStrings.zoomReset)}
+            </button>
+          )}
+          {imgSrc && (
+            <button
+              onClick={() => setLightboxOpen(true)}
+              className="btn-press flex items-center gap-1 px-2.5 py-1 bg-white rounded-xl text-[11px] font-bold text-gusring-text-sub border border-gusring-border"
+            >
+              <Maximize2 size={12} />
+            </button>
+          )}
+        </div>
       </div>
 
       {/* 줌어블 서식 영역 */}
@@ -117,6 +132,16 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
       </div>
 
     </div>
+
+    {/* 라이트박스 */}
+    {lightboxOpen && imgSrc && (
+      <ImageLightbox
+        images={[imgSrc]}
+        initialIndex={0}
+        onClose={() => setLightboxOpen(false)}
+      />
+    )}
+    </>
   );
 };
 

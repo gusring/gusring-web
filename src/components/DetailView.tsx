@@ -210,9 +210,10 @@ export const DetailViewFAB: React.FC<{
   t: (obj: I18nString) => string;
   lang: LangId;
   isDownloading: boolean;
+  hasImage: boolean;
   onDownload: () => void;
   onFeedback: () => void;
-}> = ({ t, lang, isDownloading, onDownload, onFeedback }) => {
+}> = ({ t, lang, isDownloading, hasImage, onDownload, onFeedback }) => {
   const [open, setOpen] = useState(false);
 
   const fabPos: React.CSSProperties = {
@@ -255,25 +256,27 @@ export const DetailViewFAB: React.FC<{
           </div>
         </button>
 
-        {/* 다운로드 버튼 */}
-        <button
-          style={subBtn(20)}
-          onClick={() => { setOpen(false); onDownload(); }}
-          disabled={isDownloading}
-          className="flex items-center gap-3 pl-4 pr-3 py-3 btn-primary rounded-2xl shadow-yellow
-                     active:scale-95 active:brightness-105
-                     transition-[transform,filter] duration-150 disabled:opacity-60"
-        >
-          <span className="text-gusring-brand-950 text-[13px] font-black tracking-tight whitespace-nowrap select-none">
-            {isDownloading ? t(UIStrings.downloading) : t(UIStrings.download)}
-          </span>
-          <div className="w-8 h-8 bg-gusring-brand-950/10 rounded-xl flex items-center justify-center">
-            {isDownloading
-              ? <span className="text-sm animate-spin inline-block">⏳</span>
-              : <Download size={16} className="text-gusring-brand-950" />
-            }
-          </div>
-        </button>
+        {/* 다운로드 버튼 — 이미지 있을 때만 표시 */}
+        {hasImage && (
+          <button
+            style={subBtn(20)}
+            onClick={() => { setOpen(false); onDownload(); }}
+            disabled={isDownloading}
+            className="flex items-center gap-3 pl-4 pr-3 py-3 btn-primary rounded-2xl shadow-yellow
+                       active:scale-95 active:brightness-105
+                       transition-[transform,filter] duration-150 disabled:opacity-60"
+          >
+            <span className="text-gusring-brand-950 text-[13px] font-black tracking-tight whitespace-nowrap select-none">
+              {isDownloading ? t(UIStrings.downloading) : t(UIStrings.download)}
+            </span>
+            <div className="w-8 h-8 bg-gusring-brand-950/10 rounded-xl flex items-center justify-center">
+              {isDownloading
+                ? <span className="text-sm animate-spin inline-block">⏳</span>
+                : <Download size={16} className="text-gusring-brand-950" />
+              }
+            </div>
+          </button>
+        )}
 
         {/* 메인 FAB */}
         <button

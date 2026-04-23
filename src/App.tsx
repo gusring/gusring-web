@@ -189,6 +189,7 @@ const App: React.FC = () => {
           t={t}
           lang={currentLang}
           isDownloading={isDownloading}
+          hasImage={!!(selectedForm.images?.[currentLang])}
           onDownload={handleDownload}
           onFeedback={() => setIsFeedbackOpen(true)}
         />

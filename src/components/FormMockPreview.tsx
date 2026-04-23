@@ -1,5 +1,4 @@
 import React from 'react';
-import { FileImage } from 'lucide-react';
 import { FormItem, I18nString, LangId } from '../types';
 
 // 언어별 "이미지 준비중" 문구
@@ -36,10 +35,8 @@ const FormMockPreview: React.FC<Props> = ({ form, t, lang }) => {
   const msg = PREPARING[lang ?? 'ko'] ?? PREPARING.ko;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 py-14 px-6 text-center bg-gusring-bg">
-      <div className="w-16 h-16 rounded-3xl bg-gusring-surface border-2 border-dashed border-gusring-border-strong flex items-center justify-center">
-        <FileImage size={28} className="text-gusring-text-hint" />
-      </div>
+    <div className="flex flex-col items-center justify-center gap-3 py-10 px-6 text-center bg-gusring-bg">
+      <img src="/sign.png" alt="preparing" className="w-36 h-auto object-contain" />
       <div className="space-y-1">
         <p className="font-black text-gusring-text text-[15px]">{msg.title}</p>
         <p className="text-[12px] text-gusring-text-hint leading-relaxed">{msg.sub}</p>

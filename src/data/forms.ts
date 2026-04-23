@@ -53,7 +53,7 @@ export const formsList: FormItem[] = [
     id: 3, cat: 'FAMILY',
     title: { ko: '인지(친권자 지정)신고서', en: 'Acknowledgment Report', zh: '认知申报书', ja: '認知届', vi: 'Đơn báo cáo nhận con' },
     desc:  { ko: '혼인 외의 자녀를 자신의 자식으로 인정할 때 제출합니다.', en: "Submitted to acknowledge a child born out of wedlock as one's own.", zh: '承认婚姻以外的子女为自己的子女时提交。', ja: '婚姻外の子を自分の子として認める時に提出します.', vi: 'Nộp để công nhận con ngoài giá thú là con của mình.' },
-    images: { 'en': '/forms/en/3.png', 'zh': '/forms/zh/3.png', 'ja': '/forms/ja/3.png', 'vi': '/forms/vi/3.png' },
+    images: { 'zh': '/forms/zh/3.png', 'vi': '/forms/vi/3.png' },
     guideImages: { 'ja': ['/forms/ja/3_guide1.png', '/forms/ja/3_guide2.png', '/forms/ja/3_guide3.png', '/forms/ja/3_guide4.png', '/forms/ja/3_guide5.png', '/forms/ja/3_guide6.png'], 'vi': ['/forms/vi/3_guide1.png', '/forms/vi/3_guide2.png', '/forms/vi/3_guide3.png', '/forms/vi/3_guide4.png', '/forms/vi/3_guide5.png', '/forms/vi/3_guide6.png'] },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
@@ -127,7 +127,7 @@ export const formsList: FormItem[] = [
     id: 7, cat: 'FAMILY',
     title: { ko: '성본 변경 신고서', en: 'Surname Change Report', zh: '姓本变更申报书', ja: '姓本変更届', vi: 'Đơn báo cáo thay đổi họ' },
     desc:  { ko: '자녀의 성과 본을 변경하기 위해 작성하는 서류입니다.', en: "Document to change a child's surname and origin.", zh: '为了变更子女的姓和本而填写的材料。', ja: '子の氏と本を変更するために作成する書類です.', vi: 'Văn bản dùng để thay đổi họ và nguồn gốc của con.' },
-    images: { 'en': '/forms/en/7.png', 'zh': '/forms/zh/7.png', 'ja': '/forms/ja/7.png', 'vi': '/forms/vi/7.png' },
+    images: { 'ja': '/forms/ja/7.png', 'vi': '/forms/vi/7.png' },
     guideImages: { 'zh': ['/forms/zh/7_guide1.png', '/forms/zh/7_guide2.png', '/forms/zh/7_guide3.png'], 'vi': ['/forms/vi/7_guide1.png', '/forms/vi/7_guide2.png'] },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
@@ -238,7 +238,7 @@ export const formsList: FormItem[] = [
     id: 14, cat: 'FAMILY',
     title: { ko: '친양자 입양신고서', en: 'Full Adoption Report', zh: '亲养子收养申报', ja: '特別養子縁組届', vi: 'Đăng ký nhận con nuôi đặc biệt' },
     desc:  { ko: '친생자와 동일한 권리를 갖는 친양자를 입양할 때 사용합니다.', en: 'Used for full adoption giving same rights as biological children.', zh: '收养与亲生子女具有相同法律权利的亲养子时使用。', ja: '実子と同一の法的権利を持つ特別養子を縁組する時に使用します.', vi: 'Sử dụng khi nhận con nuôi đặc biệt.' },
-    images: { 'en': '/forms/en/14.png', 'zh': '/forms/zh/14.png', 'ja': '/forms/ja/14.png', vi: '/forms/vi/14.png' },
+    images: { 'zh': '/forms/zh/14.png', 'ja': '/forms/ja/14.png', vi: '/forms/vi/14.png' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '재판서 정본 및 확정증명서, 신분증', 
@@ -252,7 +252,7 @@ export const formsList: FormItem[] = [
     id: 15, cat: 'FAMILY',
     title: { ko: '혼인신고시 자녀의 성과 본 협의', en: 'Agreement on Child Surname', zh: '婚姻申报时姓本协议', ja: '婚姻届出時の氏本協議', vi: 'Thỏa thuận về họ của con' },
     desc:  { ko: '혼인 시 장래 자녀의 성을 어머니의 성으로 따르기로 할 때 작성합니다.', en: "Agreed to follow the mother's surname for future children.", zh: '结婚时协议未来子女随母姓时填写。', ja: '婚姻時, 将来の子の氏を母の氏に従うことに合意した時に作成します.', vi: 'Lập khi kết hôn nếu thỏa thuận con cái sẽ theo họ mẹ.' },
-    images: { 'en': '/forms/en/15.png', 'zh': '/forms/zh/15.png', 'ja': '/forms/ja/15.png', 'vi': '/forms/vi/15.png' },
+    images: { 'zh': '/forms/zh/15.png', 'ja': '/forms/ja/15.png', 'vi': '/forms/vi/15.png' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '혼인신고 시 함께 제출 (협의서)', 
@@ -414,7 +414,7 @@ export const formsList: FormItem[] = [
     id: 28, cat: 'RESIDENCE',
     title: { ko: '체류지변경 위임장', en: 'POA for Residence Change', zh: '住所转移委托书', ja: '居所移転委任状', vi: 'Ủy quyền thay đổi cư trú' },
     desc:  { ko: '체류지 변경 신고를 대리인에게 위임할 때 작성합니다.', en: 'To delegate residence change reporting to a rep.', zh: '将滞留地变更申报委托给代理人. ', ja: '滞留地変更届を代理人に委任する時に作成します.', vi: 'Lập khi ủy quyền báo cáo thay đổi nơi tạm trú.' },
-    images: { 'en': '/forms/en/28.png', 'zh': '/forms/zh/28.png', 'ja': '/forms/ja/28.png', 'vi': '/forms/vi/28.png' },
+    images: { 'en': '/forms/en/28.png', 'vi': '/forms/vi/28.png' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '위임인 외국인등록증 사본, 대리인 신분증', 
@@ -428,7 +428,7 @@ export const formsList: FormItem[] = [
     id: 30, cat: 'RESIDENCE',
     title: { ko: '출입국사실증명 위임장', en: 'POA for Entry/Exit Cert', zh: '出入境证明委托', ja: '出入国証明委任', vi: 'Ủy quyền cấp giấy XNC' },
     desc:  { ko: '출입국 사실증명서 발급을 대리인에게 맡길 때 작성합니다.', en: 'To delegate entry/exit certificate issuance.', zh: '将出入境事实证明书的发放交给代理人. ', ja: '出入国事実証明書の発行を代理人に任せる時に作成します.', vi: 'Ủy quyền lấy giấy chứng nhận xuất nhập cảnh.' },
-    images: { 'en': '/forms/en/30.png', 'zh': '/forms/zh/30.png', 'ja': '/forms/ja/30.png', 'vi': '/forms/vi/30.png' },
+    images: { 'zh': '/forms/zh/30.png', 'ja': '/forms/ja/30.png', 'vi': '/forms/vi/30.png' },
     guideImages: { 'ja': ['/forms/ja/30_guide1.png', '/forms/ja/30_guide2.png', '/forms/ja/30_guide3.png'], 'vi': ['/forms/vi/30_guide1.png', '/forms/vi/30_guide2.png'] },
     fee: { ko: '2,000원', en: '2,000 KRW', zh: '2,000 韩元', ja: '2,000ウォン', vi: '2,000 KRW' },
     requirements: { 
@@ -443,7 +443,7 @@ export const formsList: FormItem[] = [
     id: 31, cat: 'RESIDENCE',
     title: { ko: '주민등록표 신청서', en: 'Resident Register App', zh: '居民登记表申请', ja: '住民登録票申請', vi: 'Đơn cấp bản sao sổ hộ khẩu' },
     desc:  { ko: '주민등록 등본이나 초본을 발급받기 위해 신청합니다.', en: 'Request to issue a resident register copy.', zh: '领取居民登记誊本或抄本. ', ja: '住民登録の謄本や抄本を発行してもらうために申請します.', vi: 'Đăng ký lấy bản sao sổ hộ khẩu.' },
-    images: { 'en': '/forms/en/31.png', 'zh': '/forms/zh/31.png', 'ja': '/forms/ja/31.png', 'vi': '/forms/vi/31.png' },
+    images: { 'en': '/forms/en/31.png', 'ja': '/forms/ja/31.png', 'vi': '/forms/vi/31.png' },
     guideImages: { 'en': ['/forms/en/31_guide1.png', '/forms/en/31_guide2.png', '/forms/en/31_guide3.png', '/forms/en/31_guide4.png', '/forms/en/31_guide5.png', '/forms/en/31_guide6.png'], 'zh': ['/forms/zh/31_guide1.png'], 'vi': ['/forms/vi/31_guide1.png', '/forms/vi/31_guide2.png', '/forms/vi/31_guide3.png', '/forms/vi/31_guide4.png', '/forms/vi/31_guide5.png', '/forms/vi/31_guide6.png'] },
     fee: { ko: '400원', en: '400 KRW', zh: '400 韩元', ja: '400ウォン', vi: '400 KRW' },
     requirements: { 

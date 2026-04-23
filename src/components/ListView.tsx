@@ -110,7 +110,7 @@ const ListView: React.FC<Props> = ({
           style={{ animationDelay: `${idx * 30}ms` }}
         >
           {/* 아이콘 */}
-          <div className="w-12 h-12 bg-gusring-yellow-soft group-hover:bg-gusring-yellow rounded-[18px] flex items-center justify-center text-gusring-brand-400 group-hover:text-white shrink-0 transition-all duration-200 shadow-inset-sm">
+          <div className="w-12 h-12 bg-gusring-yellow-soft group-hover:bg-gusring-yellow rounded-[18px] flex items-center justify-center text-gusring-brand-600 group-hover:text-gusring-brand-950 shrink-0 transition-all duration-200 shadow-inset-sm">
             <FileText size={22} />
           </div>
 
@@ -133,8 +133,9 @@ const ListView: React.FC<Props> = ({
 
       {/* 결과 없음 */}
       {filteredForms.length === 0 && (
-        <div className="text-center py-20 bg-gusring-surface rounded-5xl border-4 border-dashed border-gusring-border animate-fade-in">
-          <p className="text-gusring-text-hint text-sm font-bold">{t(UIStrings.noResult)}</p>
+        <div className="flex flex-col items-center py-10 text-center gap-2 animate-fade-in">
+          <img src="/sign.png" alt="no result" className="w-36 h-auto object-contain" />
+          <p className="font-black text-gusring-text text-base">{t(UIStrings.noResult)}</p>
         </div>
       )}
     </div>

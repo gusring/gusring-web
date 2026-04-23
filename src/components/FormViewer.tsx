@@ -84,7 +84,7 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
       <div className="flex items-center justify-between px-4 py-2.5 bg-gusring-bg border-b border-gusring-border">
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 bg-gusring-yellow rounded-full flex items-center justify-center">
-            <Info size={11} className="text-white" />
+            <Info size={11} className="text-gusring-brand-950" />
           </div>
           <span className="text-[11px] font-bold text-gusring-text-sub">
             {scale > 1.1 ? t(UIStrings.zoomHintReset) : t(UIStrings.zoomHint)}

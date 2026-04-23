@@ -18,28 +18,34 @@ const LandingView: React.FC<Props> = ({ languages, onSelect }) => {
       {/* 배경 데코 — 연한 브랜드 원형 */}
       <div
         className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(212,82,42,0.07) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(254,219,2,0.12) 0%, transparent 70%)' }}
       />
       <div
         className="pointer-events-none absolute -bottom-16 -left-20 w-56 h-56 rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(212,82,42,0.05) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(254,219,2,0.08) 0%, transparent 70%)' }}
       />
 
       {/* ── 상단: 로고 ─────────────────────────────────────── */}
       <div className="flex flex-col items-center justify-center flex-1 px-8 pt-10 pb-4 w-full">
-        <div className="animate-scale-in" style={{ animationDelay: '0ms' }}>
+        {/* 로고 + 마스코트 */}
+        <div className="flex items-end justify-center gap-1 animate-scale-in" style={{ animationDelay: '0ms' }}>
           <img
             src="/gusring_logo.png"
             alt="Gusring"
-            className="w-52 sm:w-60 h-auto object-contain"
+            className="w-44 sm:w-52 h-auto object-contain"
             style={{ mixBlendMode: 'multiply' }}
+          />
+          <img
+            src="/waving.png"
+            alt="mascot"
+            className="w-24 sm:w-28 h-auto object-contain animate-bounce-soft"
           />
         </div>
 
         {/* 브랜드 구분선 */}
         <div
-          className="mt-8 mb-8 w-10 h-[3px] rounded-full animate-fade-in"
-          style={{ background: '#D4522A', animationDelay: '150ms' }}
+          className="mt-6 mb-8 w-10 h-[3px] rounded-full animate-fade-in"
+          style={{ background: '#fedb02', animationDelay: '150ms' }}
         />
 
         {/* ── 언어 그리드 ────────────────────────────────── */}

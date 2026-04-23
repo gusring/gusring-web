@@ -59,7 +59,7 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
         <div className="flex items-center justify-between px-5 py-3 border-b border-gusring-border">
           <div className="flex items-center gap-2.5">
             <div className="w-9 h-9 bg-gusring-yellow rounded-2xl flex items-center justify-center">
-              <MessageCircle size={18} className="text-white" />
+              <MessageCircle size={18} className="text-gusring-brand-950" />
             </div>
             <h2 className="font-black text-gusring-text text-base leading-tight">
               {t(UIStrings.fbTitle)}
@@ -76,7 +76,7 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
         {/* 본문 */}
         <div className="flex flex-col items-center justify-center px-6 py-12 gap-6 text-center">
           <div className="w-16 h-16 bg-gusring-yellow/20 rounded-3xl flex items-center justify-center">
-            <MessageCircle size={28} className="text-gusring-brand-500" />
+            <MessageCircle size={28} className="text-gusring-brand-700" />
           </div>
 
           <div className="space-y-2">
@@ -91,7 +91,7 @@ const FeedbackThread: React.FC<Props> = ({ lang, onClose }) => {
           </div>
 
           <button
-            className="btn-press flex items-center gap-2 px-6 py-3.5 bg-gusring-yellow rounded-2xl font-black text-white text-sm shadow-yellow-sm w-full justify-center"
+            className="btn-press flex items-center gap-2 px-6 py-3.5 bg-gusring-yellow rounded-2xl font-black text-gusring-brand-950 text-sm shadow-yellow-sm w-full justify-center"
             onClick={handleOpen}
           >
             <ExternalLink size={16} />

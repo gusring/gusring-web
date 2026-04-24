@@ -29,7 +29,7 @@ const SECTIONS: Sec[] = [
       { num: '16',    title: { ko: '지방세 통합상담',                   en: 'Local Tax Consultation',                   zh: '地方税综合咨询',           ja: '地方税総合相談',           vi: 'Tư vấn thuế địa phương'      }, desc: { ko: '☎ 02-2627-2528', en: '☎ 02-2627-2528', zh: '☎ 02-2627-2528', ja: '☎ 02-2627-2528', vi: '☎ 02-2627-2528' } },
       { num: '17',    title: { ko: '부동산취득세 자진신고 (개인)',        en: 'Real Estate Acquisition Tax (Individual)', zh: '房产取得税自申报(个人)',     ja: '不動産取得税自己申告(個人)', vi: 'Thuế mua BĐS tự khai (cá nhân)' }, desc: { ko: '☎ 02-2627-2529', en: '☎ 02-2627-2529', zh: '☎ 02-2627-2529', ja: '☎ 02-2627-2529', vi: '☎ 02-2627-2529' } },
       { num: '18',    title: { ko: '지방세 체납조회 · 납세증명',          en: 'Tax Delinquency & Payment Certificate',    zh: '地方税欠缴查询·纳税证明',   ja: '地方税滞納照会・納税証明',  vi: 'Kiểm tra nợ thuế & chứng nhận' }, desc: { ko: '지방세납세 증명서 발급 등', en: 'Issuance of tax payment certificates', zh: '地方税纳税证明书发放等', ja: '地方税納税証明書発行など', vi: 'Cấp giấy chứng nhận nộp thuế' } },
-      { num: '19–20', title: { ko: '자동차 취득세 신고',                 en: 'Vehicle Acquisition Tax Report',          zh: '汽车取得税申报',           ja: '自動車取得税申告',         vi: 'Khai thuế mua xe'            }, desc: { ko: '', en: '', zh: '', ja: '', vi: '' } },
+      { num: '19–20', title: { ko: '자동차 취득세 신고',                 en: 'Vehicle Acquisition Tax Report',          zh: '汽车取得税申报',           ja: '自動車取得税申告',         vi: 'Khai thuế mua xe'            } },
     ],
   },
   {
@@ -40,7 +40,7 @@ const SECTIONS: Sec[] = [
       { num: '12', title: { ko: '부동산중개업 개설등록',   en: 'Real Estate Agency Registration', zh: '房产中介开业登记',   ja: '不動産仲介業開設登録', vi: 'Đăng ký trung tâm BĐS'      }, desc: { ko: '이전, 폐업, 상호변경 등',                          en: 'Transfer, closure, name change, etc.',              zh: '转让、停业、名称变更等',         ja: '移転、廃業、商号変更など',     vi: 'Chuyển nhượng, đóng cửa, đổi tên'          } },
       { num: '13', title: { ko: '부동산 거래신고 · 검인', en: 'Real Estate Transaction Report',  zh: '房产交易申报·认证',  ja: '不動産取引申告・検認', vi: 'Khai báo giao dịch BĐS'    }, desc: { ko: '부동산 거래의 해제 등',                            en: 'Cancellation of transactions, etc.',                zh: '房产交易的解除等',               ja: '不動産取引の解除など',         vi: 'Hủy giao dịch BĐS, v.v.'                  } },
       { num: '14', title: { ko: '부동산 증명 발급',       en: 'Real Estate Certificate',         zh: '房产证明发放',       ja: '不動産証明発行',       vi: 'Cấp giấy chứng nhận BĐS'  }, desc: { ko: '토지대장, 건축물대장, 토지이용계획, 개별공시지가 등', en: 'Land register, building register, land use plan, land price, etc.', zh: '土地台账、建筑物台账、土地利用计划、公示地价等', ja: '土地台帳、建物台帳、土地利用計画、公示地価など', vi: 'Sổ đất, sổ nhà, quy hoạch, giá đất, v.v.' } },
-      { num: '15', title: { ko: '지적측량신청',           en: 'Cadastral Survey Application',    zh: '地籍测量申请',       ja: '地籍測量申請',         vi: 'Đơn đo đạc địa chính'     }, desc: { ko: '', en: '', zh: '', ja: '', vi: '' } },
+      { num: '15', title: { ko: '지적측량신청',           en: 'Cadastral Survey Application',    zh: '地籍测量申请',       ja: '地籍測量申請',         vi: 'Đơn đo đạc địa chính'     } },
     ],
   },
   {

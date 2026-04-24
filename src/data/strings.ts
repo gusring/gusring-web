@@ -2,14 +2,12 @@ import { I18nString } from '../types';
 
 // ── UI 문자열 ───────────────────────────────────────────────
 export const UIStrings: Record<string, I18nString> = {
-  landing:          { ko: '언어를 선택해주세요',                  en: 'Select your language',               zh: '请选择语言',         ja: '言語を選択してください',       vi: 'Vui lòng chọn ngôn ngữ'           },
   welcome:          { ko: '금천구 다국어 민원 가이드',            en: 'Geumcheon Multilingual Guide',       zh: '衿川多语种指南',     ja: '衿川多言語ガイド',             vi: 'Hướng dẫn Geumcheon'              },
   subWelcome:       { ko: '41종의 행정 서식을 모국어로 안내합니다.', en: '41 administrative forms in your language.', zh: '用母语提供41种行政表格。', ja: '41種類の行政書類を母国語で案内。', vi: '41 mẫu đơn bằng tiếng mẹ đẻ.'   },
   searchPlaceholder:{ ko: '서식 명칭 검색...',                   en: 'Search forms...',                    zh: '搜索表格...',       ja: '書類検索...',                  vi: 'Tìm kiếm mẫu đơn...'              },
   catAll:           { ko: '전체',                               en: 'All',                                zh: '全部',             ja: '全て',                         vi: 'Tất cả'                           },
   viewForm:         { ko: '양식 보기',                           en: 'View Form',                          zh: '查看表格',          ja: '様式を見る',                   vi: 'Xem mẫu đơn'                      },
   viewGuide:        { ko: '안내사항 보기',                       en: 'View Instructions',                  zh: '查看说明',          ja: '案内事項を見る',               vi: 'Xem hướng dẫn'                    },
-  noGuide:          { ko: '이 언어의 안내 이미지가 없습니다.',   en: 'No guide images for this language.',  zh: '此语言没有说明图片。', ja: 'この言語のガイド画像はありません。', vi: 'Không có hình hướng dẫn cho ngôn ngữ này.' },
   feedback:         { ko: '피드백 보내기',                       en: 'Feedback',                           zh: '反馈',             ja: '感想',                         vi: 'Phản hồi'                         },
   download:         { ko: '서류 양식 다운로드',                  en: 'Download Form',                      zh: '下载表格',          ja: '書類をダウンロード',            vi: 'Tải xuống mẫu đơn'               },
   downloading:      { ko: '다운로드 중...',                      en: 'Downloading...',                     zh: '正在下载...',       ja: 'ダウンロード中...',            vi: 'Đang tải xuống...'               },
@@ -18,15 +16,4 @@ export const UIStrings: Record<string, I18nString> = {
   zoomHintReset:    { ko: '두 번 탭하면 원래 크기로',           en: 'Double-tap to reset zoom',            zh: '双击恢复原始大小',   ja: 'ダブルタップで元のサイズに',        vi: 'Nhấn đúp để đặt lại thu phóng'   },
   zoomReset:        { ko: '초기화',                             en: 'Reset',                              zh: '重置',             ja: 'リセット',                      vi: 'Đặt lại'                          },
   fbTitle:          { ko: '피드백',                             en: 'Feedback',                           zh: '反馈',             ja: 'フィードバック',                 vi: 'Phản hồi'                         },
-  fbLoading:        { ko: '불러오는 중...',                     en: 'Loading...',                         zh: '加载中...',         ja: '読み込み中...',                  vi: 'Đang tải...'                      },
-  fbConnected:      { ko: '연결됨',                             en: 'Connected',                          zh: '已连接',           ja: '接続済み',                      vi: 'Đã kết nối'                       },
-  fbDisconnected:   { ko: '미연결',                             en: 'Not connected',                      zh: '未连接',           ja: '未接続',                         vi: 'Chưa kết nối'                     },
-  fbEmpty:          { ko: '첫 번째 메시지를 남겨보세요',        en: 'Be the first to leave a message',    zh: '快来留下第一条消息', ja: '最初のメッセージを残しましょう',   vi: 'Hãy để lại tin nhắn đầu tiên'    },
-  fbEmptyDesc:      { ko: '여러분의 솔직한 피드백이 서비스 개선에 큰 힘이 돼요.', en: 'Your honest feedback helps us improve the service.', zh: '您的反馈是我们改进服务的动力。', ja: 'あなたのフィードバックがサービス改善に役立ちます。', vi: 'Phản hồi của bạn giúp chúng tôi cải thiện dịch vụ.' },
-  fbWritingIn:      { ko: '로 작성 중',                         en: 'writing in',                         zh: '语撰写中',         ja: 'で作成中',                      vi: 'đang viết bằng'                   },
-  fbAnonymous:      { ko: '익명으로 전송됩니다',                en: 'Sent anonymously',                   zh: '匿名发送',         ja: '匿名で送信されます',              vi: 'Gửi ẩn danh'                      },
-  fbSendHint:       { ko: 'Cmd+Enter로 전송',                  en: 'Cmd+Enter to send',                  zh: 'Cmd+Enter 发送',   ja: 'Cmd+Enterで送信',                vi: 'Cmd+Enter để gửi'                 },
-  fbToday:          { ko: '오늘',                               en: 'Today',                              zh: '今天',             ja: '今日',                           vi: 'Hôm nay'                          },
-  fbYesterday:      { ko: '어제',                               en: 'Yesterday',                          zh: '昨天',             ja: '昨日',                           vi: 'Hôm qua'                          },
-  fbJustNow:        { ko: '방금 전',                            en: 'Just now',                           zh: '刚刚',             ja: 'たった今',                       vi: 'Vừa xong'                         },
 };

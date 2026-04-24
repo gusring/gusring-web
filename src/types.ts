@@ -33,10 +33,6 @@ export interface FormItem {
   notes?: Partial<I18nString>;
 }
 
-export interface GuideStep {
-  title: I18nString;
-  desc: I18nString;
-}
 
 export interface FeedbackEntry {
   id:        string;

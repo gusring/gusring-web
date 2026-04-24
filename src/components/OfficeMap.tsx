@@ -105,22 +105,32 @@ const OfficeMap: React.FC<{ lang: LangId }> = ({ lang }) => {
 
           {/* ── 왼쪽 하단 시설 ── */}
           <line x1="107" y1="196" x2="107" y2="268" stroke="#D1D5DB" strokeWidth="0.8" />
-          {['전문가상담실', '팩스·복사·건강코너', '정부24 PC', '법인무인민원발급기'].map((label, i) => (
+          {([
+            { ko: '전문가상담실',      en: 'Consultation Room',    zh: '专家咨询室',       ja: '専門家相談室',         vi: 'Phòng tư vấn'         },
+            { ko: '팩스·복사·건강코너', en: 'Fax·Copy·Health',      zh: '传真·复印·健康角', ja: 'FAX·コピー·健康コーナー', vi: 'Fax·Copy·Sức khỏe'  },
+            { ko: '정부24 PC',         en: 'Gov24 Kiosk',          zh: '政府24 PC',        ja: '政府24 PC',            vi: 'Máy Gov24'            },
+            { ko: '법인무인민원발급기', en: 'Corp. Self-Service',   zh: '法人无人证件机',   ja: '法人無人発行機',       vi: 'Máy tự phục vụ'       },
+          ] as I18n[]).map((label, i) => (
             <g key={`ld-${i}`}>
               <circle cx={107} cy={207 + i * 20} r={3.5} fill="#2563eb" />
               <text x={101} y={207 + i * 20 + 3} textAnchor="end" fontSize="7.5" fill="#374151" fontWeight="600">
-                {label}
+                {tx(label, lang)}
               </text>
             </g>
           ))}
 
           {/* ── 오른쪽 하단 시설 ── */}
           <line x1="213" y1="196" x2="213" y2="268" stroke="#D1D5DB" strokeWidth="0.8" />
-          {['민원직원 휴게실', '서울금융복지상담센터', '취업정보센터', '안내데스크·우선배려창구'].map((label, i) => (
+          {([
+            { ko: '민원직원 휴게실',      en: 'Staff Lounge',         zh: '职员休息室',       ja: '職員休憩室',           vi: 'Phòng nghỉ nhân viên' },
+            { ko: '서울금융복지상담센터', en: 'Seoul Finance Center', zh: '首尔金融福利中心', ja: 'ソウル金融福祉センター', vi: 'Trung tâm Tài chính'  },
+            { ko: '취업정보센터',         en: 'Job Info Center',      zh: '就业信息中心',     ja: '就職情報センター',     vi: 'Trung tâm Việc làm'   },
+            { ko: '안내데스크·우선배려창구', en: 'Info·Priority Desk', zh: '服务台·优先窗口',  ja: '案内·優先窓口',        vi: 'Quầy thông tin·Ưu tiên' },
+          ] as I18n[]).map((label, i) => (
             <g key={`rd-${i}`}>
               <circle cx={213} cy={207 + i * 20} r={3.5} fill="#2563eb" />
               <text x={219} y={207 + i * 20 + 3} textAnchor="start" fontSize="7.5" fill="#374151" fontWeight="600">
-                {label}
+                {tx(label, lang)}
               </text>
             </g>
           ))}

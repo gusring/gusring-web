@@ -40,7 +40,7 @@
 | :--- | :--- | :--- |
 | **Core** | ![React](https://img.shields.io/badge/React-19-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-4.9-blue) | 최신 UI 라이브러리 및 언어 |
 | **Build** | **Create React App** | 빌드 도구 및 개발 서버 |
-| **Infra** | ![Firebase](https://img.shields.io/badge/Firebase-12-orange) ![Netlify](https://img.shields.io/badge/Netlify-Latest-00C7B7) | 분석, 호스팅 및 CI/CD |
+| **Infra** | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white) | 호스팅 및 CI/CD |
 | **Style** | ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC) | 유틸리티 우선 스타일링 |
 | **Icons** | **lucide-react** | 인터랙티브 벡터 아이콘 |
 | **Pkg Mgr** | **npm** | 패키지 매니저 |

@@ -59,7 +59,7 @@ const LandingView: React.FC<Props> = ({ languages, onSelect }) => {
 
         {/* 영문 플랫폼 명칭 */}
         <p 
-          className={`mt-3 text-[11px] sm:text-[13px] font-black text-gusring-brand-700 tracking-[0.12em] uppercase transition-all duration-700
+          className={`mt-3 text-[11px] sm:text-[13px] font-black text-gusring-yellow tracking-[0.12em] uppercase transition-all duration-700
             ${isSplash ? 'opacity-80' : 'opacity-100'}`}
         >
           Administrative Guide Platform

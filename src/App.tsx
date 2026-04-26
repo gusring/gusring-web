@@ -92,11 +92,18 @@ const App: React.FC = () => {
     if (view === 'detail') window.scrollTo({ top: 0, behavior: 'auto' });
   }, [view, selectedForm]);
 
+  // ── 현재 언어 → 영어 → 첫번째 가용 이미지 순 폴백 ─────────
+  const resolveImageUrl = useCallback((form: FormItem): string | undefined => {
+    return form.images?.[currentLang]
+      ?? form.images?.['en']
+      ?? Object.values(form.images ?? {}).find(Boolean);
+  }, [currentLang]);
+
   // ── 다운로드 ──────────────────────────────────────────────
   const handleDownload = useCallback(async () => {
     if (isDownloading || !selectedForm) return;
 
-    const imageUrl = selectedForm.images?.[currentLang] ?? selectedForm.images?.['en'];
+    const imageUrl = resolveImageUrl(selectedForm);
     if (!imageUrl) return;
 
     trackFormDownload({
@@ -193,7 +200,7 @@ const App: React.FC = () => {
           t={t}
           lang={currentLang}
           isDownloading={isDownloading}
-          hasImage={!!(selectedForm.images?.[currentLang])}
+          hasImage={!!resolveImageUrl(selectedForm)}
           onDownload={handleDownload}
           onFeedback={() => setIsFeedbackOpen(true)}
         />

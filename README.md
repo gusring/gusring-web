@@ -19,18 +19,16 @@
 *   **실제 현장 기반(Real-World Context):** 실험실 안의 기술이 아닌, 실제 금천구청 민원실 등 행정 현장에서 발생하는 페인 포인트(Pain Point)를 해결합니다.
 *   **지속 가능한 혁신:** 일회성 개발에 그치지 않고, 피드백 루프를 통해 지역 사회에 실질적인 변화를 가져오는 것을 목표로 합니다.
 
-**Gusring**은 리빙랩의 가치를 실현하기 위해 실제 외국인 주민들의 인터뷰를 바탕으로 필요 서식을 선정하고, 사용자 테스트를 거쳐 인터랙티브한 안내 지도를 구현했습니다.
-
 <br/>
 
 ## ✨ Implementation Highlights
-사용자 편의성을 최우선으로 고려한 **인터랙티브 UI 설계**와 **확장 가능한 다국어 구조**에 집중했습니다.
+사용자 편의성과 서비스 신뢰성을 최우선으로 고려한 **기술적 구현 사항**입니다.
 
-*   **SVG-Based Interactive Map:** 복잡한 민원실 구조를 정밀한 SVG 패스로 직접 구현했습니다. 이미지 대비 압도적인 해상도를 제공하며, 각 구역 클릭 시 실시간 상태 관리를 통해 창구 번호와 세부 업무를 직관적으로 안내합니다.
-*   **Scalable I18n Architecture:** `useTranslate` 커스텀 훅과 중앙 집중식 데이터 구조를 통해 5개 국어(KO, EN, ZH, JA, VI)를 실시간 지원합니다. 새로운 언어 확장이 용이하도록 설계되었습니다.
-*   **State-Driven Interaction:** 
-    *   **Real-time Filtering:** 41종의 서식을 카테고리 및 검색어에 따라 실시간으로 필터링하며, 유저 액션에 따른 디바운스 트래킹 로직이 포함되어 있습니다.
-    *   **Contextual UI:** 선택한 언어와 서식의 특성에 따라 가이드 이미지 및 행정 정보(수수료, 준비물 등)를 동적으로 렌더링합니다.
+*   **Seamless UX with Splash Animation:** 앱 접속 시 로고와 마스코트가 화면 중앙에서 상단으로 이동하며 콘텐츠가 나타나는 역동적인 인트로를 구현하여 서비스의 첫인상을 강화했습니다.
+*   **SVG-Based Interactive Map:** 복잡한 민원실 구조를 정밀한 SVG 패스로 직접 구현했습니다. 이미지 대비 압도적인 해상도를 제공하며, 각 구역 클릭 시 실시간 상태 관리를 통해 창구 정보를 직관적으로 안내합니다.
+*   **Scalable Feature-Based Architecture:** 프로젝트가 커짐에 따라 유지보수성을 높이기 위해 도메인 중심(Feature-based) 아키텍처로 리팩토링을 완료했습니다.
+*   **Scalable I18n Architecture:** `useTranslate` 커스텀 훅과 중앙 집중식 데이터 구조를 통해 5개 국어(KO, EN, ZH, JA, VI)를 실시간 지원합니다.
+*   **Direct Feedback Loop:** 내비게이션 바에 피드백 버튼을 상시 노출하여 리빙랩의 핵심 가치인 '사용자 의견 수렴'을 기술적으로 뒷받침합니다.
 
 <br/>
 
@@ -50,76 +48,22 @@
 
 ## 📂 Project Structure (폴더 구조)
 
-우리는 **기능(Feature) 중심의 아키텍처**를 사용합니다. 도메인별로 로직과 UI를 모듈화하여 관리합니다.
+우리는 **기능(Feature) 중심의 아키텍처**를 사용합니다. 각 기능별로 컴포넌트와 데이터를 응집력 있게 관리합니다.
 
 ```text
 src/
-├── components/          # 전역 공용 UI (Header, Lightbox 등)
-│
-├── shared/              # 전역 공통 유틸리티 및 설정
-│   ├── types.ts         # 전역 타입 정의 (I18n, FormItem 등)
-│   ├── analytics.ts     # Firebase 트래킹 로직
-│   └── firebase.ts      # SDK 설정
-│
+├── components/          # 공통 UI 컴포넌트 (Header, Lightbox 등)
+├── shared/              # 전역 공통 유틸리티 및 타입 (types.ts, analytics.ts)
 ├── features/            # 핵심 도메인별 기능 모음
-│   ├── forms/           # 서식 목록 및 상세 안내 기능
-│   │   ├── components/  # ListView, DetailView, FormViewer
-│   │   └── data/        # forms.ts (서식 DB), categories.ts
-│   ├── office-map/      # 민원실 안내 지도 기능
-│   │   └── components/  # OfficeMap.tsx (SVG Map)
-│   ├── i18n/            # 언어 선택 및 온보딩
-│   │   └── components/  # LandingView.tsx
-│   └── feedback/        # 피드백 수집 기능
-│       └── components/  # FeedbackThread.tsx
-│
+│   ├── forms/           # 서식 목록 및 상세 안내 (ListView, DetailView)
+│   ├── office-map/      # 민원실 안내 지도 (OfficeMap)
+│   ├── i18n/            # 언어 선택 및 온보딩 (LandingView)
+│   └── feedback/        # 사용자 피드백 시스템
 ├── hooks/               # 전역 공통 훅 (useTranslate 등)
 ├── data/                # 전역 정적 데이터 (languages, UI strings)
 ├── App.tsx              # 메인 라우팅 및 전역 상태 관리
 └── index.tsx            # 엔트리 포인트
 ```
-
-<br/>
-
-## 📦 Getting Started (설치 및 실행)
-
-### 1. 프로젝트 클론
-```bash
-git clone https://github.com/gusring/gusring-web.git
-cd gusring-web
-```
-
-### 2. 패키지 설치
-```bash
-npm install
-```
-
-### 3. 환경 변수 설정 (.env)
-루트 디렉토리에 `.env` 파일을 생성하고 필요한 Firebase 설정값을 입력하세요.
-
-### 4. 개발 서버 실행
-```bash
-npm start
-```
-
-### 5. 프로덕션 빌드
-```bash
-npm run build
-```
-
-<br/>
-
-## 🤝 Contribution Guide
-
-### 📌 브랜치 전략
-* `main`: 배포 가능한 안정 버전
-* `develop`: 개발 및 기능 통합 브랜치
-
-### 📌 커밋 컨벤션
-* `feat`: 새로운 기능 추가
-* `fix`: 버그 수정
-* `design`: 스타일 수정
-* `refactor`: 코드 리팩토링
-* `docs`: 문서 수정
 
 ---
 © 2026 Gusring Team. All rights reserved.

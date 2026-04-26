@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Map } from 'lucide-react';
+import { ArrowLeft, Map, MessageSquare } from 'lucide-react';
 import { Language, LangId, ViewName } from '../shared/types';
 
 interface Props {
@@ -11,9 +11,9 @@ interface Props {
   onMap: () => void;
 }
 
-const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLanding, onMap }) => {
-  const currentLanguage = languages.find(l => l.id === currentLang);
+const FEEDBACK_URL = 'https://forms.gle/wmRLR4rZjTGkge2u6';
 
+const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLanding, onMap }) => {
   return (
     <header className="sticky top-0 z-30 glass border-b border-gusring-border safe-top">
       <div className="px-5 h-14 flex items-center justify-between">
@@ -39,7 +39,7 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
           )}
         </div>
 
-        {/* 오른쪽: 언어 + 지도 + 메뉴 */}
+        {/* 오른쪽: 지도 + 피드백 */}
         <div className="flex items-center gap-2">
           <button
             onClick={onMap}
@@ -51,10 +51,11 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
             <Map size={18} />
           </button>
           <button
-            onClick={onLanding}
-            className="btn-press h-9 px-3 bg-gusring-yellow-soft rounded-xl text-[11px] font-black text-gusring-brand-700 border border-gusring-brand-100 shadow-card active:scale-95 transition-transform"
+            onClick={() => window.open(FEEDBACK_URL, '_blank', 'noopener,noreferrer')}
+            className="btn-press h-9 w-9 flex items-center justify-center bg-gusring-yellow-soft rounded-xl text-gusring-brand-700 border border-gusring-brand-100 shadow-card active:scale-95 transition-transform"
+            aria-label="피드백 남기기"
           >
-            {currentLanguage?.icon} {currentLang.toUpperCase()}
+            <MessageSquare size={18} />
           </button>
         </div>
       </div>

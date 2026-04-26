@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Search, FileText, ChevronRight } from 'lucide-react';
 import { categories } from '../data/categories';
-import { UIStrings } from '../data/strings';
-import { FormItem, I18nString, LangId } from '../types';
-import { trackSearch, trackCategoryFilter } from '../analytics';
+import { UIStrings } from '../../../data/strings';
+import { FormItem, I18nString, LangId } from '../../../shared/types';
+import { trackSearch, trackCategoryFilter } from '../../../shared/analytics';
 
 interface Props {
   t: (obj: I18nString) => string;

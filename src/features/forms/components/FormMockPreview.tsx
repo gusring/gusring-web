@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormItem, I18nString, LangId } from '../types';
+import { FormItem, I18nString, LangId } from '../../../shared/types';
 
 // 언어별 "이미지 준비중" 문구
 const PREPARING: Record<string, { title: string; sub: string }> = {

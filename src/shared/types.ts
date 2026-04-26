@@ -6,7 +6,7 @@ export type LangId = 'ko' | 'en' | 'zh' | 'ja' | 'vi';
 
 export type CategoryKey = 'FAMILY' | 'CERT' | 'RESIDENCE' | 'ID_SEAL' | 'VEHICLE';
 
-export type ViewName = 'landing' | 'list' | 'detail';
+export type ViewName = 'landing' | 'list' | 'detail' | 'map';
 
 /** 다국어 문자열 객체 */
 export type I18nString = Record<LangId, string>;

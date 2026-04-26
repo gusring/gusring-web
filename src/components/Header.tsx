@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
-import { Language, LangId, ViewName } from '../types';
+import { ArrowLeft, Map } from 'lucide-react';
+import { Language, LangId, ViewName } from '../shared/types';
 
 interface Props {
   view: ViewName;
@@ -8,9 +8,10 @@ interface Props {
   languages: Language[];
   onBack: () => void;
   onLanding: () => void;
+  onMap: () => void;
 }
 
-const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLanding }) => {
+const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLanding, onMap }) => {
   const currentLanguage = languages.find(l => l.id === currentLang);
 
   return (
@@ -18,7 +19,7 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
       <div className="px-5 h-14 flex items-center justify-between">
         {/* 왼쪽: 뒤로가기 or 로고 */}
         <div className="flex items-center gap-3">
-          {view === 'detail' ? (
+          {(view === 'detail' || view === 'map') ? (
             <button
               onClick={onBack}
               className="btn-press p-2 -ml-2 rounded-2xl hover:bg-gusring-yellow-soft text-gusring-brand-600 transition-colors"
@@ -38,8 +39,17 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
           )}
         </div>
 
-        {/* 오른쪽: 언어 + 메뉴 */}
+        {/* 오른쪽: 언어 + 지도 + 메뉴 */}
         <div className="flex items-center gap-2">
+          <button
+            onClick={onMap}
+            className={`btn-press h-9 w-9 flex items-center justify-center rounded-xl border border-gusring-brand-100 shadow-card active:scale-95 transition-all ${
+              view === 'map' ? 'bg-gusring-brand-600 text-white' : 'bg-gusring-yellow-soft text-gusring-brand-700'
+            }`}
+            aria-label="통합민원실 지도"
+          >
+            <Map size={18} />
+          </button>
           <button
             onClick={onLanding}
             className="btn-press h-9 px-3 bg-gusring-yellow-soft rounded-xl text-[11px] font-black text-gusring-brand-700 border border-gusring-brand-100 shadow-card active:scale-95 transition-transform"

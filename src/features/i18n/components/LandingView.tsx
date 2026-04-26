@@ -1,5 +1,5 @@
 import React from 'react';
-import { Language, LangId } from '../types';
+import { Language, LangId } from '../../../shared/types';
 
 interface Props {
   languages: Language[];

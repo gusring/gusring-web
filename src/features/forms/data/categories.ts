@@ -1,4 +1,4 @@
-import { CategoryKey, I18nString } from '../types';
+import { CategoryKey, I18nString } from '../../../shared/types';
 
 export const categories: Record<CategoryKey, I18nString> = {
   FAMILY:    { ko: '가족관계', en: 'Family',       zh: '家庭', ja: '家族', vi: 'Gia đình'   },

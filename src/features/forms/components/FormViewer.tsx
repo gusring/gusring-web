@@ -2,10 +2,10 @@ import React, {
   useState, useRef, useCallback, useEffect,
 } from 'react';
 import { ZoomOut, Info, Maximize2 } from 'lucide-react';
-import { FormItem, I18nString, LangId } from '../types';
+import { FormItem, I18nString, LangId } from '../../../shared/types';
 import FormMockPreview from './FormMockPreview';
-import ImageLightbox from './ImageLightbox';
-import { UIStrings } from '../data/strings';
+import ImageLightbox from '../../../components/ImageLightbox';
+import { UIStrings } from '../../../data/strings';
 
 interface Props {
   form: FormItem;

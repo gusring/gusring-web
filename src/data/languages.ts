@@ -1,4 +1,4 @@
-import { Language } from '../types';
+import { Language } from '../shared/types';
 
 export const languages: Language[] = [
   { id: 'en', label: 'English',  icon: '🇺🇸' },

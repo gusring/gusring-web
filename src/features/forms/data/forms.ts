@@ -1,4 +1,4 @@
-import { FormItem } from '../types';
+import { FormItem } from '../../../shared/types';
 
 /**
  * 41종 행정 서식 데이터베이스 (5개 국어 행정 정보 포함)

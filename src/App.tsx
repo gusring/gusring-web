@@ -1,16 +1,17 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 
 import { languages }   from './data/languages';
-import { formsList }   from './data/forms';
+import { formsList }   from './features/forms/data/forms';
 import { useTranslate } from './hooks/useTranslate';
 
 import Header        from './components/Header';
-import LandingView   from './components/LandingView';
-import ListView      from './components/ListView';
-import DetailView, { DetailViewFAB } from './components/DetailView';
-import FeedbackThread  from './components/FeedbackThread';
+import LandingView   from './features/i18n/components/LandingView';
+import ListView      from './features/forms/components/ListView';
+import DetailView, { DetailViewFAB } from './features/forms/components/DetailView';
+import FeedbackThread  from './features/feedback/components/FeedbackThread';
+import OfficeMap       from './features/office-map/components/OfficeMap';
 
-import { FormItem, LangId, ViewName } from './types';
+import { FormItem, LangId, ViewName } from './shared/types';
 import {
   trackLandingView,
   trackListView,
@@ -18,7 +19,7 @@ import {
   trackLanguageSelect,
   trackFormDownload,
   trackTimeOnDetail,
-} from './analytics';
+} from './shared/analytics';
 
 const App: React.FC = () => {
   // ── 전역 상태 ──────────────────────────────────────────────
@@ -156,6 +157,7 @@ const App: React.FC = () => {
         languages={languages}
         onBack={() => navigateTo('list')}
         onLanding={() => navigateTo('landing')}
+        onMap={() => navigateTo('map')}
       />
 
       {isFeedbackOpen && (
@@ -174,6 +176,8 @@ const App: React.FC = () => {
             onFormSelect={handleFormSelect}
             lang={currentLang}
           />
+        ) : view === 'map' ? (
+          <OfficeMap lang={currentLang} />
         ) : selectedForm ? (
           <DetailView
             form={selectedForm}

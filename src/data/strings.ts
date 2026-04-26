@@ -1,4 +1,4 @@
-import { I18nString } from '../types';
+import { I18nString } from '../shared/types';
 
 // ── UI 문자열 ───────────────────────────────────────────────
 export const UIStrings: Record<string, I18nString> = {

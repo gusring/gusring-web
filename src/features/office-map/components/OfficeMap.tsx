@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-import { LangId } from '../types';
+import { LangId } from '../../../shared/types';
 
 type I18n = { ko: string; en: string; zh: string; ja: string; vi: string };
 const tx = (o: I18n, l: LangId): string => o[l] ?? o.ko;

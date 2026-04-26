@@ -1,8 +1,8 @@
 import React from 'react';
 import { X, MessageCircle, ExternalLink } from 'lucide-react';
-import { LangId } from '../types';
-import { UIStrings } from '../data/strings';
-import { useTranslate } from '../hooks/useTranslate';
+import { LangId } from '../../../shared/types';
+import { UIStrings } from '../../../data/strings';
+import { useTranslate } from '../../../hooks/useTranslate';
 
 // ── 구글폼 링크 (여기에 실제 링크로 교체하세요) ──────────────
 const GOOGLE_FORM_URL = 'https://forms.gle/wmRLR4rZjTGkge2u6';

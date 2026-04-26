@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { I18nString, LangId } from '../types';
+import { I18nString, LangId } from '../shared/types';
 
 /**
  * 현재 언어에 맞는 번역 함수를 반환하는 훅.

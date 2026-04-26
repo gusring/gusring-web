@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { ChevronDown, Download, MessageCircle, Plus } from 'lucide-react';
 import { categories } from '../data/categories';
-import { UIStrings } from '../data/strings';
-import { FormItem, I18nString, LangId } from '../types';
+import { UIStrings } from '../../../data/strings';
+import { FormItem, I18nString, LangId } from '../../../shared/types';
 import FormViewer from './FormViewer';
-import ImageLightbox from './ImageLightbox';
-import OfficeMap from './OfficeMap';
-import { trackFeedbackClick } from '../analytics';
+import ImageLightbox from '../../../components/ImageLightbox';
+import OfficeMap from '../../office-map/components/OfficeMap';
+import { trackFeedbackClick } from '../../../shared/analytics';
 
 interface Props {
   form: FormItem;

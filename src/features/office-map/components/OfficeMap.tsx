@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { LangId } from '../../../shared/types';
 
@@ -151,8 +152,8 @@ const OfficeMap: React.FC<{ lang: LangId }> = ({ lang }) => {
         </div>
       </div>
 
-      {/* 바텀시트 */}
-      {sel && (
+      {/* 바텀시트 — document.body에 Portal로 렌더링해 stacking context 문제 방지 */}
+      {sel && createPortal(
         <div className="fixed inset-0 z-50 flex flex-col justify-end">
           <div
             className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in"
@@ -208,7 +209,8 @@ const OfficeMap: React.FC<{ lang: LangId }> = ({ lang }) => {
 
             <div className="safe-bottom shrink-0" />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

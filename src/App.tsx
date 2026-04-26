@@ -8,7 +8,6 @@ import Header        from './components/Header';
 import LandingView   from './features/i18n/components/LandingView';
 import ListView      from './features/forms/components/ListView';
 import DetailView, { DetailViewFAB } from './features/forms/components/DetailView';
-import FeedbackThread  from './features/feedback/components/FeedbackThread';
 import OfficeMap       from './features/office-map/components/OfficeMap';
 
 import { FormItem, LangId, ViewName } from './shared/types';
@@ -29,7 +28,6 @@ const App: React.FC = () => {
   const [searchTerm, setSearchTerm]             = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [isDownloading, setIsDownloading]       = useState(false);
-  const [isFeedbackOpen, setIsFeedbackOpen]     = useState(false);
   const detailEnterTimeRef                      = useRef<number | null>(null);
 
   // ── 번역 함수 ───────────────────────────────────────────────
@@ -167,10 +165,6 @@ const App: React.FC = () => {
         onMap={() => navigateTo('map')}
       />
 
-      {isFeedbackOpen && (
-        <FeedbackThread lang={currentLang} onClose={() => setIsFeedbackOpen(false)} />
-      )}
-
       <main className="flex-1">
         {view === 'list' ? (
           <ListView
@@ -198,11 +192,9 @@ const App: React.FC = () => {
       {view === 'detail' && selectedForm && (
         <DetailViewFAB
           t={t}
-          lang={currentLang}
           isDownloading={isDownloading}
           hasImage={!!resolveImageUrl(selectedForm)}
           onDownload={handleDownload}
-          onFeedback={() => setIsFeedbackOpen(true)}
         />
       )}
 

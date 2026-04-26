@@ -1,12 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { ChevronDown, Download, MessageCircle, Plus } from 'lucide-react';
+import { ChevronDown, Download } from 'lucide-react';
 import { categories } from '../data/categories';
 import { UIStrings } from '../../../data/strings';
 import { FormItem, I18nString, LangId } from '../../../shared/types';
 import FormViewer from './FormViewer';
 import ImageLightbox from '../../../components/ImageLightbox';
 import OfficeMap from '../../office-map/components/OfficeMap';
-import { trackFeedbackClick } from '../../../shared/analytics';
 
 interface Props {
   form: FormItem;
@@ -218,94 +217,40 @@ const DetailView: React.FC<Props> = ({ form, t, lang }) => {
   );
 };
 
-// ── FAB (우하단 플로팅 액션 버튼) ─────────────────────────────
+// ── 다운로드 FAB (단일 버튼) ──────────────────────────────────
 export const DetailViewFAB: React.FC<{
   t: (obj: I18nString) => string;
-  lang: LangId;
   isDownloading: boolean;
   hasImage: boolean;
   onDownload: () => void;
-  onFeedback: () => void;
-}> = ({ t, lang, isDownloading, hasImage, onDownload, onFeedback }) => {
-  const [open, setOpen] = useState(false);
+}> = ({ t, isDownloading, hasImage, onDownload }) => {
+  if (!hasImage) return null;
 
   const fabPos: React.CSSProperties = {
     bottom: 'calc(env(safe-area-inset-bottom, 0px) + 1.5rem)',
     right:  'max(1.25rem, calc((100vw - 448px) / 2 + 1.25rem))',
   };
 
-  const subBtn = (delay: number): React.CSSProperties => ({
-    transition: 'opacity 220ms ease, transform 280ms cubic-bezier(0.34,1.4,0.64,1)',
-    transitionDelay: open ? `${delay}ms` : '0ms',
-    opacity:   open ? 1 : 0,
-    transform: open ? 'translateY(0) scale(1)' : 'translateY(16px) scale(0.88)',
-    pointerEvents: open ? 'auto' : 'none',
-  });
-
   return (
-    <>
-      {/* 딤 배경 */}
-      <div
-        onClick={() => setOpen(false)}
-        className="fixed inset-0 z-20 transition-opacity duration-200"
-        style={{ opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none', background: 'rgba(0,0,0,0.18)' }}
-      />
-
-      <div className="fixed z-30 flex flex-col items-end gap-2.5" style={fabPos}>
-
-        {/* 피드백 버튼 */}
-        <button
-          style={subBtn(60)}
-          onClick={() => { setOpen(false); trackFeedbackClick(lang); onFeedback(); }}
-          className="flex items-center gap-3 pl-4 pr-3 py-3 bg-gusring-text rounded-2xl shadow-card-lg
-                     active:scale-95 active:brightness-110
-                     transition-[transform,filter] duration-150"
-        >
-          <span className="text-white text-[13px] font-black tracking-tight whitespace-nowrap select-none">
-            {t(UIStrings.feedback)}
-          </span>
-          <div className="w-8 h-8 bg-white/10 rounded-xl flex items-center justify-center">
-            <MessageCircle size={16} className="text-gusring-yellow" />
-          </div>
-        </button>
-
-        {/* 다운로드 버튼 — 이미지 있을 때만 표시 */}
-        {hasImage && (
-          <button
-            style={subBtn(20)}
-            onClick={() => { setOpen(false); onDownload(); }}
-            disabled={isDownloading}
-            className="flex items-center gap-3 pl-4 pr-3 py-3 btn-primary rounded-2xl shadow-yellow
-                       active:scale-95 active:brightness-105
-                       transition-[transform,filter] duration-150 disabled:opacity-60"
-          >
-            <span className="text-gusring-brand-950 text-[13px] font-black tracking-tight whitespace-nowrap select-none">
-              {isDownloading ? t(UIStrings.downloading) : t(UIStrings.download)}
-            </span>
-            <div className="w-8 h-8 bg-gusring-brand-950/10 rounded-xl flex items-center justify-center">
-              {isDownloading
-                ? <span className="text-sm animate-spin inline-block">⏳</span>
-                : <Download size={16} className="text-gusring-brand-950" />
-              }
-            </div>
-          </button>
-        )}
-
-        {/* 메인 FAB */}
-        <button
-          onClick={() => setOpen(o => !o)}
-          className="w-14 h-14 btn-primary rounded-2xl flex items-center justify-center shadow-yellow
-                     active:scale-90 transition-transform duration-150"
-          style={{ transform: open ? 'scale(0.94)' : 'scale(1)' }}
-        >
-          <Plus
-            size={24}
-            className="text-gusring-brand-950 transition-transform duration-300"
-            style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)' }}
-          />
-        </button>
+    <button
+      className="fixed z-40 flex items-center gap-3 pl-4 pr-3 py-3 btn-primary rounded-2xl shadow-yellow
+                 active:scale-95 active:brightness-105
+                 transition-[transform,filter] duration-150 disabled:opacity-60
+                 animate-scale-in"
+      style={fabPos}
+      onClick={onDownload}
+      disabled={isDownloading}
+    >
+      <span className="text-gusring-brand-950 text-[13px] font-black tracking-tight whitespace-nowrap select-none">
+        {isDownloading ? t(UIStrings.downloading) : t(UIStrings.download)}
+      </span>
+      <div className="w-8 h-8 bg-gusring-brand-950/10 rounded-xl flex items-center justify-center">
+        {isDownloading
+          ? <span className="text-sm animate-spin inline-block">⏳</span>
+          : <Download size={16} className="text-gusring-brand-950" />
+        }
       </div>
-    </>
+    </button>
   );
 };
 

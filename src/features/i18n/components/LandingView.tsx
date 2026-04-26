@@ -12,7 +12,7 @@ const LandingView: React.FC<Props> = ({ languages, onSelect }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsSplash(false);
-    }, 1200);
+    }, 300);
     return () => clearTimeout(timer);
   }, []);
 
@@ -74,8 +74,8 @@ const LandingView: React.FC<Props> = ({ languages, onSelect }) => {
 
       {/* ── 언어 선택 영역 (인트로 동안 flex-0으로 공간 차지 안함) ── */}
       <div 
-        className={`w-full max-w-[280px] sm:max-w-sm px-4 pb-10 flex flex-col justify-center transition-all duration-1000
-          ${isSplash ? 'flex-[0.001] opacity-0 translate-y-10 pointer-events-none' : 'flex-[12] opacity-100 translate-y-0 pointer-events-auto'}`}
+        className={`w-full max-w-[280px] sm:max-w-sm px-4 pb-10 flex flex-col justify-start pt-4 transition-all duration-1000
+          ${isSplash ? 'flex-[0.001] opacity-0 translate-y-10 pointer-events-none' : 'flex-[6] opacity-100 translate-y-0 pointer-events-auto'}`}
       >
         <div className="space-y-2">
           {/* 2-column 그리드 */}

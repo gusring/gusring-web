@@ -18,6 +18,7 @@ import {
   trackLanguageSelect,
   trackFormDownload,
   trackTimeOnDetail,
+  trackSearch,
 } from './shared/analytics';
 
 const App: React.FC = () => {
@@ -29,6 +30,7 @@ const App: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [isDownloading, setIsDownloading]       = useState(false);
   const detailEnterTimeRef                      = useRef<number | null>(null);
+  const searchDebounceRef                       = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // ── 번역 함수 ───────────────────────────────────────────────
   const t = useTranslate(currentLang);
@@ -45,6 +47,18 @@ const App: React.FC = () => {
       return matchesSearch && matchesCategory;
     });
   }, [searchTerm, selectedCategory, t]);
+
+  // ── 검색어 트래킹 (300ms 디바운스) ────────────────────────────
+  useEffect(() => {
+    if (!searchTerm.trim()) return;
+    if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
+    searchDebounceRef.current = setTimeout(() => {
+      trackSearch({ term: searchTerm, resultCount: filteredForms.length, lang: currentLang });
+    }, 300);
+    return () => {
+      if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
+    };
+  }, [searchTerm, filteredForms.length, currentLang]);
 
   // ── 네비게이션 (메뉴 자동 닫기 포함) ───────────────────────
   const navigateTo = useCallback((nextView: ViewName) => {

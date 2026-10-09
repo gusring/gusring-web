@@ -33,7 +33,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_2_2b90e7.png', 'en': '/forms/en/forms_en_2_1102b8.png', 'zh': '/forms/cn/forms_cn_2_817252.png', 'ja': '/forms/jp/forms_jp_2_fc58d9.png', 'vi': '/forms/vi/forms_vi_2_984f9c.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_2_6c9a7e.png', '/guides/ko/guides_ko_2_118135.png'], 'en': ['/guides/en/guides_en_2_80a2e3.png', '/guides/en/guides_en_2_684f7a.png', '/guides/en/guides_en_2_99086e.png', '/guides/en/guides_en_2_7057be.png', '/guides/en/guides_en_2_e89b84.png', '/guides/en/guides_en_2_997a07.png', '/guides/en/guides_en_2_4cfc11.png', '/guides/en/guides_en_2_5637a9.png'], 'zh': ['/guides/cn/guides_cn_2_b6de1a.png', '/guides/jp/guides_jp_2_c1a6d6.png', '/guides/jp/guides_jp_2_1d12cd.png', '/guides/jp/guides_jp_2_2df6da.png', '/guides/jp/guides_jp_2_9d7550.png', '/guides/jp/guides_jp_2_5db19d.png', '/guides/jp/guides_jp_2_bae1bc.png', '/guides/jp/guides_jp_2_be0642.png'], 'ja': ['/guides/jp/guides_jp_2_082765.png'], 'vi': ['/guides/vi/guides_vi_2_7737e3.png', '/guides/vi/guides_vi_2_cade5b.png', '/guides/vi/guides_vi_2_0f0962.png', '/guides/vi/guides_vi_2_6e2b35.png', '/guides/vi/guides_vi_2_02fda1.png', '/guides/vi/guides_vi_2_58220a.png', '/guides/vi/guides_vi_2_70c49d.png']},
     title: { ko: '사망신고서', en: 'Death Report', zh: '死亡申报书', ja: '死亡届', vi: 'Giấy báo tử' },
-    desc: { ko: '가족이나 친족이 사망했을 때 관할 기관에 알리는 서류입니다.', en: "A document to notify authorities of a family member's death.", zh: '家属或亲属死亡时向管辖机构报告的文件。', ja: '家族や親族が死亡した時に管轄機関에知らせる書類です。', vi: 'Văn bản thông báo khi có thành viên trong gia đình qua đời.' },
+    desc: { ko: '가족이나 친족이 사망했을 때 관할 기관에 알리는 서류입니다.', en: "A document to notify authorities of a family member's death.", zh: '家属或亲属死亡时向管辖机构报告的文件。', ja: '家族や親族が死亡した時に管轄機関に知らせる書類です。', vi: 'Văn bản thông báo khi có thành viên trong gia đình qua đời.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '사망진단서(또는 사체검안서), 신고인 신분증', 
@@ -117,7 +117,7 @@ export const formsList: FormItem[] = [
       ko: '법원 허가 결정문 정본, 신고인 신분증', 
       en: 'Certified copy of court approval, Reporter\'s ID', 
       zh: '法院许可决定书正本, 申报人身份证', 
-      ja: '裁判所の許可決定文正本, 届出人の身분証明書', 
+      ja: '裁判所の許可決定文正本, 届出人の身分証明書', 
       vi: 'Bản sao quyết định của tòa án, Thẻ căn cước' 
     },
     notes: { 
@@ -150,7 +150,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_8_760805.png', 'en': '/forms/en/forms_en_8_6e09a6.png', 'zh': '/forms/cn/forms_cn_8_9facd5.png', 'ja': '/forms/jp/forms_jp_8_a72b4d.png', 'vi': '/forms/vi/forms_vi_8_869b1c.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_8_7c5fc4.png', '/guides/ko/guides_ko_8_488410.png'], 'en': ['/guides/en/guides_en_8_8374c0.png', '/guides/en/guides_en_8_d95548.png', '/guides/en/guides_en_8_fe37d0.png', '/guides/en/guides_en_8_c86196.png', '/guides/en/guides_en_8_e84b5c.png', '/guides/en/guides_en_8_62a01d.png', '/guides/en/guides_en_8_14a4b3.png', '/guides/en/guides_en_8_1b01b0.png', '/guides/en/guides_en_8_955dda.png'], 'zh': ['/guides/cn/guides_cn_8_7df35b.png', '/guides/jp/guides_jp_8_9200ac.png', '/guides/jp/guides_jp_8_663c3f.png', '/guides/jp/guides_jp_8_d50717.png', '/guides/jp/guides_jp_8_39ac2b.png', '/guides/jp/guides_jp_8_977579.png'], 'ja': ['/guides/jp/guides_jp_8_bd766b.png'], 'vi': ['/guides/vi/guides_vi_8_3ffb2b.png', '/guides/vi/guides_vi_8_4def50.png', '/guides/vi/guides_vi_8_6b8561.png', '/guides/vi/guides_vi_8_d854cc.png', '/guides/vi/guides_vi_8_d6f502.png', '/guides/vi/guides_vi_8_95f81a.png']},
     title: { ko: '입양신고서', en: 'Adoption Report', zh: '收养申报书', ja: '養子縁組届', vi: 'Giấy đăng ký nhận con nuôi' },
-    desc: { ko: '법적으로 자녀를 입양하여 부모-자식 관계를 맺을 때 사용합니다.', en: 'Used to legally adopt a child.', zh: '法律上收养子女并建立父母子女关系时使用。', ja: '法적으로 子를 養子にし, 親子関係を結ぶ時使用します.', vi: 'Sử dụng khi nhận con nuôi hợp pháp.' },
+    desc: { ko: '법적으로 자녀를 입양하여 부모-자식 관계를 맺을 때 사용합니다.', en: 'Used to legally adopt a child.', zh: '法律上收养子女并建立父母子女关系时使用。', ja: '法的に子を養子にし, 親子関係を結ぶ時使用します.', vi: 'Sử dụng khi nhận con nuôi hợp pháp.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '입양동의서, 신고인 신분증, 증인(2명) 날인', 
@@ -182,7 +182,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_10_420169.png', 'en': '/forms/en/forms_en_10_a644d7.png', 'zh': '/forms/cn/forms_cn_10_be859f.png', 'ja': '/forms/jp/forms_jp_10_4b29a6.png', 'vi': '/forms/vi/forms_vi_10_ca4662.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_10_0090d9.png', '/guides/ko/guides_ko_10_2e9499.png'], 'en': ['/guides/en/guides_en_10_7f24c9.png', '/guides/en/guides_en_10_e139b5.png', '/guides/en/guides_en_10_120fa0.png', '/guides/en/guides_en_10_d05507.png', '/guides/en/guides_en_10_271c4b.png', '/guides/en/guides_en_10_7affed.png', '/guides/en/guides_en_10_2a7690.png', '/guides/en/guides_en_10_e42470.png'], 'zh': ['/guides/cn/guides_cn_10_0711fc.png', '/guides/jp/guides_jp_10_afc891.png', '/guides/jp/guides_jp_10_c8a83d.png', '/guides/jp/guides_jp_10_06586f.png', '/guides/jp/guides_jp_10_6f4676.png', '/guides/jp/guides_jp_10_a6d08a.png', '/guides/jp/guides_jp_10_873ebb.png', '/guides/jp/guides_jp_10_df4123.png'], 'ja': ['/guides/jp/guides_jp_10_ea84a7.png'], 'vi': ['/guides/vi/guides_vi_10_2617d1.png', '/guides/vi/guides_vi_10_57094e.png', '/guides/vi/guides_vi_10_4f7cd1.png', '/guides/vi/guides_vi_10_da2c1f.png', '/guides/vi/guides_vi_10_bfcd63.png', '/guides/vi/guides_vi_10_c3d649.png', '/guides/vi/guides_vi_10_58ac04.png']},
     title: { ko: '혼인신고서', en: 'Marriage Report', zh: '婚姻申报书', ja: '婚姻届', vi: 'Giấy đăng ký kết hôn' },
-    desc: { ko: '법적으로 부부가 되었음을 공인받기 위해 제출하는 서류입니다.', en: 'Submitted to be officially recognized as a married couple.', zh: '为了获得法律上成为夫妇的公认而提交的文件。', ja: '法的に夫婦になったことを公認されるために提出する書類です.', vi: 'Văn bản nộp để được 공 nhận là vợ chồng hợp pháp.' },
+    desc: { ko: '법적으로 부부가 되었음을 공인받기 위해 제출하는 서류입니다.', en: 'Submitted to be officially recognized as a married couple.', zh: '为了获得法律上成为夫妇的公认而提交的文件。', ja: '法的に夫婦になったことを公認されるために提出する書類です.', vi: 'Văn bản nộp để được công nhận là vợ chồng hợp pháp.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '혼인당사자 신분증, 증인(2명) 정보/서명', 
@@ -221,7 +221,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_12_2b487c.png', 'en': '/forms/en/forms_en_12_2ed23d.png', 'zh': '/forms/cn/forms_cn_12_e82fc1.png', 'ja': '/forms/jp/forms_jp_12_7a7415.png', 'vi': '/forms/vi/forms_vi_12_161da6.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_12_f131aa.png', '/guides/ko/guides_ko_12_038d53.png'], 'en': ['/guides/en/guides_en_12_1a9738.png', '/guides/en/guides_en_12_2a1057.png', '/guides/en/guides_en_12_cb9e2b.png', '/guides/en/guides_en_12_89cca1.png', '/guides/en/guides_en_12_5684c4.png', '/guides/en/guides_en_12_9455d6.png', '/guides/en/guides_en_12_5938df.png', '/guides/en/guides_en_12_97dc14.png', '/guides/en/guides_en_12_ea287d.png'], 'zh': ['/guides/jp/guides_jp_12_61a113.png', '/guides/jp/guides_jp_12_e75177.png', '/guides/jp/guides_jp_12_355210.png', '/guides/jp/guides_jp_12_6777b0.png', '/guides/jp/guides_jp_12_f805dc.png', '/guides/jp/guides_jp_12_0326a3.png', '/guides/jp/guides_jp_12_b5a41d.png', '/guides/jp/guides_jp_12_bbb7ac.png', '/guides/cn/guides_cn_12_7b2cb1.png'], 'ja': ['/guides/jp/guides_jp_12_990dc5.png'], 'vi': ['/guides/vi/guides_vi_12_fcdab9.png', '/guides/vi/guides_vi_12_49f1d6.png', '/guides/vi/guides_vi_12_3a16aa.png', '/guides/vi/guides_vi_12_5f7316.png', '/guides/vi/guides_vi_12_80985b.png', '/guides/vi/guides_vi_12_76fafe.png', '/guides/vi/guides_vi_12_7a7909.png']},
     title: { ko: '이혼신고서', en: 'Divorce Report', zh: '离婚申报书', ja: '離婚届', vi: 'Giấy báo ly hôn' },
-    desc: { ko: '법적 혼인 관계를 해소했음을 신고하는 서류입니다.', en: 'Document reporting the dissolution of a legal marriage.', zh: '申报法律婚姻关系已解除的文件。', ja: '法的婚姻関係を解消したことを届け出る書類입니다.', vi: 'Văn bản báo cáo việc chấm dứt quan hệ hôn nhân hợp pháp.' },
+    desc: { ko: '법적 혼인 관계를 해소했음을 신고하는 서류입니다.', en: 'Document reporting the dissolution of a legal marriage.', zh: '申报法律婚姻关系已解除的文件。', ja: '法的婚姻関係を解消したことを届け出る書類です.', vi: 'Văn bản báo cáo việc chấm dứt quan hệ hôn nhân hợp pháp.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '협의이혼의사확인서(또는 재판서 정본), 신분증', 
@@ -342,7 +342,7 @@ export const formsList: FormItem[] = [
       ko: '본인 신분증, 신청서', 
       en: 'Your ID Card, Application form', 
       zh: '本人身份证, 申请表', 
-      ja: '本人の身분証明書, 申請書', 
+      ja: '本人の身分証明書, 申請書', 
       vi: 'Thẻ căn cước, Đơn đăng ký' 
     },
   },
@@ -603,7 +603,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_34_753ade.png', 'en': '/forms/en/forms_en_34_6dd162.png', 'ja': '/forms/jp/forms_jp_34_6b7289.png', 'vi': '/forms/vi/forms_vi_34_2f0107.png'},
     guideImages: {'en': ['/guides/en/guides_en_34_2e24f2.png', '/guides/en/guides_en_34_20bd77.png', '/guides/en/guides_en_34_99ebe0.png', '/guides/en/guides_en_34_9bf465.png', '/guides/en/guides_en_34_84697c.png', '/guides/en/guides_en_34_1d2849.png'], 'ja': ['/guides/jp/guides_jp_34_3f7682.png'], 'vi': ['/guides/vi/guides_vi_34_cdb31e.png', '/guides/vi/guides_vi_34_75da88.png', '/guides/vi/guides_vi_34_79de79.png', '/guides/vi/guides_vi_34_55d092.png', '/guides/vi/guides_vi_34_b89661.png']},
     title: { ko: '주민등록표 발급 위임장', en: 'POA for Resident Register', zh: '居民登记表委托', ja: '住民登録票委任状', vi: 'Ủy quyền cấp sổ hộ khẩu' },
-    desc: { ko: '주민등록 등·초본 발급을 대리인에게 위임할 때 작성합니다.', en: 'To delegate resident register issuance.', zh: '将居民登记誊·抄본发放委托给代理人. ', ja: '住民登録謄・抄本の発行を代理人に委任する時に作成します.', vi: 'Ủy quyền lấy bản sao sổ hộ khẩu.' },
+    desc: { ko: '주민등록 등·초본 발급을 대리인에게 위임할 때 작성합니다.', en: 'To delegate resident register issuance.', zh: '将居民登记誊·抄本发放委托给代理人. ', ja: '住民登録謄・抄本の発行を代理人に委任する時に作成します.', vi: 'Ủy quyền lấy bản sao sổ hộ khẩu.' },
     fee: { ko: '400원', en: '400 KRW', zh: '400 韩元', ja: '400ウォン', vi: '400 KRW' },
     requirements: { 
       ko: '위임장, 위임인 신분증, 수임인 신분증', 
@@ -651,7 +651,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_37_1d0958.png', 'en': '/forms/en/forms_en_37_7bd1bf.png', 'zh': '/forms/cn/forms_cn_37_0bf15c.png', 'ja': '/forms/jp/forms_jp_37_914a52.png', 'vi': '/forms/vi/forms_vi_37_db2a1c.png'},
     guideImages: {'en': ['/guides/en/guides_en_37_95908d.png', '/guides/en/guides_en_37_dc85af.png'], 'vi': ['/guides/vi/guides_vi_37_2e5e0d.png', '/guides/vi/guides_vi_37_584fee.png']},
     title: { ko: '이륜자동차사용신고서', en: 'Motorcycle Registration', zh: '二轮汽车使用申报', ja: '二輪自動車使用届', vi: 'Báo cáo sử dụng xe máy' },
-    desc: { ko: '오토바이를 새로 구입하여 신고할 때 제출합니다.', en: 'Submitted to register a new motorcycle.', zh: '新购买摩托车进行使用申报. ', ja: 'バイクを新しく購入して使用届을出す時に提出します.', vi: 'Đăng ký sử dụng xe máy mới.' },
+    desc: { ko: '오토바이를 새로 구입하여 신고할 때 제출합니다.', en: 'Submitted to register a new motorcycle.', zh: '新购买摩托车进行使用申报. ', ja: 'バイクを新しく購入して使用届を出す時に提出します.', vi: 'Đăng ký sử dụng xe máy mới.' },
     fee: { ko: '비용 발생 (취득세 등)', en: 'Costs incurred (Taxes, etc.)', zh: '产生费用 (购置税等)', ja: '費用発生 (取得税など)', vi: 'Phát sinh chi phí (Thuế...)' },
     requirements: { 
       ko: '이륜차 제작증, 보험가입증명서, 신분증', 
@@ -667,7 +667,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_38_895521.png', 'en': '/forms/en/forms_en_38_c7435b.png', 'zh': '/forms/cn/forms_cn_38_b8d9ea.png', 'ja': '/forms/jp/forms_jp_38_62a7a8.png', 'vi': '/forms/vi/forms_vi_38_3ab23b.png'},
     guideImages: {'en': ['/guides/en/guides_en_38_cf8512.png', '/guides/en/guides_en_38_a3c170.png'], 'vi': ['/guides/vi/guides_vi_38_a356d2.png']},
     title: { ko: '이륜자동차사용폐지신고서', en: 'Motorcycle Disuse Report', zh: '二轮汽车废止申报', ja: '二輪自動車使用廃止届', vi: 'Hủy sử dụng xe máy' },
-    desc: { ko: '오토바이 사용을 중단하거나 폐기할 때 신고합니다.', en: 'Report stopping or scrapping a motorcycle.', zh: '停止使用或报废摩托车时申报. ', ja: 'バイクの使用を中断하거나廃棄하거나하는時に届け出ます.', vi: 'Báo cáo hủy sử dụng xe máy.' },
+    desc: { ko: '오토바이 사용을 중단하거나 폐기할 때 신고합니다.', en: 'Report stopping or scrapping a motorcycle.', zh: '停止使用或报废摩托车时申报. ', ja: 'バイクの使用を中断したり廃棄したりする時に届け出ます.', vi: 'Báo cáo hủy sử dụng xe máy.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '사용신고필증, 번호판 반납, 신분증', 
@@ -716,7 +716,7 @@ export const formsList: FormItem[] = [
     guideImages: {'en': ['/guides/en/guides_en_41_ef4147.png'], 'vi': ['/guides/vi/guides_vi_41_30dd53.png']},
     title: { ko: '이륜자동차증서 재교부신청서', en: 'Motorcycle Cert Re-issuance', zh: '二轮汽车证件再交付', ja: '二輪自動車証書再交付', vi: 'Cấp lại giấy xe máy' },
     desc: { ko: '오토바이 사용신고필증을 잃어버렸을 때 사용합니다.', en: 'Used to re-issue lost registration certificate.', zh: '丢失摩托车证件重新领取. ', ja: 'バイクの証書を紛失して再発行してもらう時に使用します.', vi: 'Cấp lại giấy chứng nhận xe máy.' },
-    fee: { ko: '700원', en: '700 KRW', zh: '700 韩원', ja: '700ウォン', vi: '700 KRW' },
+    fee: { ko: '700원', en: '700 KRW', zh: '700 韩元', ja: '700ウォン', vi: '700 KRW' },
     requirements: { 
       ko: '본인 신분증, 분실 사유서', 
       en: 'Your ID Card, Statement of loss', 

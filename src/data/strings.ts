@@ -2,7 +2,7 @@ import { I18nString } from '../shared/types';
 
 // ── UI 문자열 ───────────────────────────────────────────────
 export const UIStrings: Record<string, I18nString> = {
-  welcome:          { ko: '금천구 다국어 민원 가이드',            en: 'Geumcheon Multilingual Guide',       zh: '衿川多语种指南',     ja: '衿川多言語ガイド',             vi: 'Hướng dẫn Geumcheon'              },
+  welcome:          { ko: '금천구 다국어 민원 가이드',            en: 'Geumcheon Multilingual Guide',       zh: '衿川多语种指南',     ja: '衿川多言語ガイド',             vi: 'Hướng dẫn thủ tục hành chính đa ngôn ngữ tại quận Geumcheon'              },
   subWelcome:       { ko: '41종의 행정 서식을 모국어로 안내합니다.', en: '41 administrative forms in your language.', zh: '用母语提供41种行政表格。', ja: '41種類の行政書類を母国語で案内。', vi: '41 mẫu đơn bằng tiếng mẹ đẻ.'   },
   searchPlaceholder:{ ko: '서식 명칭 검색...',                   en: 'Search forms...',                    zh: '搜索表格...',       ja: '書類検索...',                  vi: 'Tìm kiếm mẫu đơn...'              },
   catAll:           { ko: '전체',                               en: 'All',                                zh: '全部',             ja: '全て',                         vi: 'Tất cả'                           },

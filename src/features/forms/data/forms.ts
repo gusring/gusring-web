@@ -148,9 +148,9 @@ export const formsList: FormItem[] = [
     id: 8,
     cat: 'FAMILY',
     images: {'ko': '/forms/ko/forms_ko_8_760805.png', 'en': '/forms/en/forms_en_8_6e09a6.png', 'zh': '/forms/cn/forms_cn_8_9facd5.png', 'ja': '/forms/jp/forms_jp_8_a72b4d.png', 'vi': '/forms/vi/forms_vi_8_869b1c.png'},
-    guideImages: {'ko': ['/guides/ko/guides_ko_8_7c5fc4.png', '/guides/ko/guides_ko_8_488410.png'], 'en': ['/guides/en/guides_en_8_8374c0.png', '/guides/en/guides_en_8_d95548.png', '/guides/en/guides_en_8_fe37d0.png', '/guides/en/guides_en_8_c86196.png', '/guides/en/guides_en_8_e84b5c.png', '/guides/en/guides_en_8_62a01d.png', '/guides/en/guides_en_8_14a4b3.png', '/guides/en/guides_en_8_1b01b0.png', '/guides/en/guides_en_8_955dda.png'], 'zh': ['/guides/cn/guides_cn_8_7df35b.png', '/guides/jp/guides_jp_8_9200ac.png', '/guides/jp/guides_jp_8_663c3f.png', '/guides/jp/guides_jp_8_d50717.png', '/guides/jp/guides_jp_8_39ac2b.png', '/guides/jp/guides_jp_8_977579.png'], 'ja': ['/guides/jp/guides_jp_8_bd766b.png'], 'vi': ['/guides/vi/guides_vi_8_3ffb2b.png', '/guides/vi/guides_vi_8_4def50.png', '/guides/vi/guides_vi_8_6b8561.png', '/guides/vi/guides_vi_8_d854cc.png', '/guides/vi/guides_vi_8_d6f502.png', '/guides/vi/guides_vi_8_95f81a.png']},
+    guideImages: {'ko': ['/guides/ko/guides_ko_8_7c5fc4.png', '/guides/ko/guides_ko_8_488410.png'], 'en': ['/guides/en/guides_en_8_8374c0.png', '/guides/en/guides_en_8_d95548.png', '/guides/en/guides_en_8_fe37d0.png', '/guides/en/guides_en_8_c86196.png', '/guides/en/guides_en_8_e84b5c.png', '/guides/en/guides_en_8_62a01d.png', '/guides/en/guides_en_8_14a4b3.png', '/guides/en/guides_en_8_1b01b0.png'], 'zh': ['/guides/cn/guides_cn_8_7df35b.png', '/guides/jp/guides_jp_8_9200ac.png', '/guides/jp/guides_jp_8_663c3f.png', '/guides/jp/guides_jp_8_d50717.png', '/guides/jp/guides_jp_8_39ac2b.png', '/guides/jp/guides_jp_8_977579.png'], 'ja': ['/guides/jp/guides_jp_8_bd766b.png'], 'vi': ['/guides/vi/guides_vi_8_3ffb2b.png', '/guides/vi/guides_vi_8_4def50.png', '/guides/vi/guides_vi_8_6b8561.png', '/guides/vi/guides_vi_8_d854cc.png', '/guides/vi/guides_vi_8_d6f502.png', '/guides/vi/guides_vi_8_95f81a.png']},
     title: { ko: '입양신고서', en: 'Adoption Report', zh: '收养申报书', ja: '養子縁組届', vi: 'Giấy đăng ký nhận con nuôi' },
-    desc: { ko: '법적으로 자녀를 입양하여 부모-자식 관계를 맺을 때 사용합니다.', en: 'Used to legally adopt a child.', zh: '法律上收养子女并建立父母子女关系时使用。', ja: '法的に子を養子にし, 親子関係を結ぶ時使用します.', vi: 'Sử dụng khi nhận con nuôi hợp pháp.' },
+    desc: { ko: '법적으로 자녀를 입양하여 부모-자식 관계를 맺을 때 사용합니다.', en: 'Used to legally adopt a child.', zh: '法律上收养子女并建立父母子女关系时使用。', ja: '法的に子どもを養子にし, 親子関係を結ぶ時使用します。', vi: 'Sử dụng khi nhận con nuôi hợp pháp.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '입양동의서, 신고인 신분증, 증인(2명) 날인', 
@@ -182,7 +182,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_10_420169.png', 'en': '/forms/en/forms_en_10_a644d7.png', 'zh': '/forms/cn/forms_cn_10_be859f.png', 'ja': '/forms/jp/forms_jp_10_4b29a6.png', 'vi': '/forms/vi/forms_vi_10_ca4662.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_10_0090d9.png', '/guides/ko/guides_ko_10_2e9499.png'], 'en': ['/guides/en/guides_en_10_7f24c9.png', '/guides/en/guides_en_10_e139b5.png', '/guides/en/guides_en_10_120fa0.png', '/guides/en/guides_en_10_d05507.png', '/guides/en/guides_en_10_271c4b.png', '/guides/en/guides_en_10_7affed.png', '/guides/en/guides_en_10_2a7690.png', '/guides/en/guides_en_10_e42470.png'], 'zh': ['/guides/cn/guides_cn_10_0711fc.png', '/guides/jp/guides_jp_10_afc891.png', '/guides/jp/guides_jp_10_c8a83d.png', '/guides/jp/guides_jp_10_06586f.png', '/guides/jp/guides_jp_10_6f4676.png', '/guides/jp/guides_jp_10_a6d08a.png', '/guides/jp/guides_jp_10_873ebb.png', '/guides/jp/guides_jp_10_df4123.png'], 'ja': ['/guides/jp/guides_jp_10_ea84a7.png'], 'vi': ['/guides/vi/guides_vi_10_2617d1.png', '/guides/vi/guides_vi_10_57094e.png', '/guides/vi/guides_vi_10_4f7cd1.png', '/guides/vi/guides_vi_10_da2c1f.png', '/guides/vi/guides_vi_10_bfcd63.png', '/guides/vi/guides_vi_10_c3d649.png', '/guides/vi/guides_vi_10_58ac04.png']},
     title: { ko: '혼인신고서', en: 'Marriage Report', zh: '婚姻申报书', ja: '婚姻届', vi: 'Giấy đăng ký kết hôn' },
-    desc: { ko: '법적으로 부부가 되었음을 공인받기 위해 제출하는 서류입니다.', en: 'Submitted to be officially recognized as a married couple.', zh: '为了获得法律上成为夫妇的公认而提交的文件。', ja: '法的に夫婦になったことを公認されるために提出する書類です.', vi: 'Văn bản nộp để được công nhận là vợ chồng hợp pháp.' },
+    desc: { ko: '법적으로 부부가 되었음을 공인받기 위해 제출하는 서류입니다.', en: 'Submitted to be officially recognized as a married couple.', zh: '为了获得法律上成为夫妇的公认而提交的文件。', ja: '法的に夫婦になったことを公認されるために提出する書類です.', vi: 'Là giấy tờ được nộp nhằm đăng ký và được công nhận quan hệ vợ chồng theo pháp luật.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '혼인당사자 신분증, 증인(2명) 정보/서명', 
@@ -221,7 +221,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_12_2b487c.png', 'en': '/forms/en/forms_en_12_2ed23d.png', 'zh': '/forms/cn/forms_cn_12_e82fc1.png', 'ja': '/forms/jp/forms_jp_12_7a7415.png', 'vi': '/forms/vi/forms_vi_12_161da6.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_12_f131aa.png', '/guides/ko/guides_ko_12_038d53.png'], 'en': ['/guides/en/guides_en_12_1a9738.png', '/guides/en/guides_en_12_2a1057.png', '/guides/en/guides_en_12_cb9e2b.png', '/guides/en/guides_en_12_89cca1.png', '/guides/en/guides_en_12_5684c4.png', '/guides/en/guides_en_12_9455d6.png', '/guides/en/guides_en_12_5938df.png', '/guides/en/guides_en_12_97dc14.png', '/guides/en/guides_en_12_ea287d.png'], 'zh': ['/guides/jp/guides_jp_12_61a113.png', '/guides/jp/guides_jp_12_e75177.png', '/guides/jp/guides_jp_12_355210.png', '/guides/jp/guides_jp_12_6777b0.png', '/guides/jp/guides_jp_12_f805dc.png', '/guides/jp/guides_jp_12_0326a3.png', '/guides/jp/guides_jp_12_b5a41d.png', '/guides/jp/guides_jp_12_bbb7ac.png', '/guides/cn/guides_cn_12_7b2cb1.png'], 'ja': ['/guides/jp/guides_jp_12_990dc5.png'], 'vi': ['/guides/vi/guides_vi_12_fcdab9.png', '/guides/vi/guides_vi_12_49f1d6.png', '/guides/vi/guides_vi_12_3a16aa.png', '/guides/vi/guides_vi_12_5f7316.png', '/guides/vi/guides_vi_12_80985b.png', '/guides/vi/guides_vi_12_76fafe.png', '/guides/vi/guides_vi_12_7a7909.png']},
     title: { ko: '이혼신고서', en: 'Divorce Report', zh: '离婚申报书', ja: '離婚届', vi: 'Giấy báo ly hôn' },
-    desc: { ko: '법적 혼인 관계를 해소했음을 신고하는 서류입니다.', en: 'Document reporting the dissolution of a legal marriage.', zh: '申报法律婚姻关系已解除的文件。', ja: '法的婚姻関係を解消したことを届け出る書類です.', vi: 'Văn bản báo cáo việc chấm dứt quan hệ hôn nhân hợp pháp.' },
+    desc: { ko: '법적 혼인 관계를 해소했음을 신고하는 서류입니다.', en: 'Document reporting the dissolution of a legal marriage.', zh: '申报法律婚姻关系已解除的文件。', ja: '法的婚姻関係を解消したことを届け出る書類です。', vi: 'Văn bản báo cáo việc chấm dứt quan hệ hôn nhân hợp pháp.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '협의이혼의사확인서(또는 재판서 정본), 신분증', 
@@ -382,8 +382,8 @@ export const formsList: FormItem[] = [
     cat: 'ID_SEAL',
     images: {'ko': '/forms/ko/forms_ko_22_32f756.png', 'en': '/forms/en/forms_en_22_d0be0b.png', 'zh': '/forms/cn/forms_cn_22_ca2f04.png', 'ja': '/forms/jp/forms_jp_22_380198.png', 'vi': '/forms/vi/forms_vi_22_bf2b40.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_22_ae76f2.png'], 'en': ['/guides/en/guides_en_22_48d52f.png', '/guides/en/guides_en_22_8fff65.png', '/guides/en/guides_en_22_1bff13.png', '/guides/en/guides_en_22_bae055.png'], 'zh': ['/guides/cn/guides_cn_22_5fd168.png', '/guides/jp/guides_jp_22_0b8216.png', '/guides/jp/guides_jp_22_8e86e2.png', '/guides/jp/guides_jp_22_96a8d6.png'], 'ja': ['/guides/jp/guides_jp_22_4a9d97.png'], 'vi': ['/guides/vi/guides_vi_22_fbada5.png', '/guides/vi/guides_vi_22_5fed7e.png', '/guides/vi/guides_vi_22_4fe122.png', '/guides/vi/guides_vi_22_3cf102.png']},
-    title: { ko: '인감보호신청/해제신청서', en: 'Seal Protection/Release', zh: '印章保护申请/解除', ja: '印鑑保護申請/解除', vi: 'Đơn xin bảo hộ/hủy ấn dấu' },
-    desc: { ko: '인감 도용 방지를 위해 본인 외 발급을 제한하거나 해제합니다.', en: 'Restrict or release seal issuance to others.', zh: '为防止印章被盗用, 限制或解除发放. ', ja: '印鑑の盗用防止のために発行を制限したり解除したりします.', vi: 'Hạn chế hoặc hủy bỏ việc cấp ấn dấu cho người khác.' },
+    title: { ko: '인감보호신청/해제신청서', en: 'Seal Protection/Release', zh: '印章保护申请/解除', ja: '印鑑保護申請/解除', vi: 'Đơn đăng ký hoặc hủy việc bảo vệ con dấu cá nhân' },
+    desc: { ko: '인감 도용 방지를 위해 본인 외 발급을 제한하거나 해제합니다.', en: 'Restrict or release seal issuance to others.', zh: '为防止印章被盗用, 限制或解除发放. ', ja: '印鑑の盗用防止のために発行を制限したり解除したりします.', vi: 'Ngăn người khác sử dụng con dấu của mình bằng cách hạn chế hoặc hủy việc cấp giấy tờ cho người khác.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '본인 신분증 (대리 불가)', 
@@ -414,15 +414,15 @@ export const formsList: FormItem[] = [
     cat: 'ID_SEAL',
     images: {'ko': '/forms/ko/forms_ko_24_f8a392.png', 'en': '/forms/en/forms_en_24_87d6bf.png', 'zh': '/forms/cn/forms_cn_24_3aee87.png', 'ja': '/forms/jp/forms_jp_24_55ab24.png', 'vi': '/forms/vi/forms_vi_24_555f83.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_24_6711d5.png'], 'en': ['/guides/en/guides_en_24_118122.png', '/guides/en/guides_en_24_8fe1c7.png', '/guides/en/guides_en_24_373e3d.png', '/guides/en/guides_en_24_8146fb.png', '/guides/en/guides_en_24_0fb088.png'], 'zh': ['/guides/cn/guides_cn_24_483329.png', '/guides/jp/guides_jp_24_0bc2f8.png', '/guides/jp/guides_jp_24_c78fb7.png', '/guides/jp/guides_jp_24_2aa345.png', '/guides/jp/guides_jp_24_d687b5.png'], 'ja': ['/guides/jp/guides_jp_24_dc38e4.png'], 'vi': ['/guides/vi/guides_vi_24_2a375e.png', '/guides/vi/guides_vi_24_ed90ea.png', '/guides/vi/guides_vi_24_a133d5.png', '/guides/vi/guides_vi_24_cd7e7a.png']},
-    title: { ko: '인감(변경)신고서(서면)', en: 'Seal Registration', zh: '印章(变更)申报', ja: '印鑑(変更)届', vi: 'Báo cáo thay đổi ấn dấu' },
-    desc: { ko: '새로운 인감을 등록하거나 기존 인감을 변경할 때 사용합니다.', en: 'Used to register or change a personal seal.', zh: '登记新印章或变更现有印章时使用. ', ja: '新しい印鑑を登録したり既存の印鑑を変更する時に使用します.', vi: 'Sử dụng khi đăng ký ấn dấu mới.' },
+    title: { ko: '인감(변경)신고서(서면)', en: 'Seal Registration', zh: '印章(变更)申报', ja: '印鑑(変更)届', vi: 'Báo cáo thay đổi con dấu cá nhân' },
+    desc: { ko: '새로운 인감을 등록하거나 기존 인감을 변경할 때 사용합니다.', en: 'Used to register or change a personal seal.', zh: '登记新印章或变更现有印章时使用. ', ja: '新しい印鑑を登録したり既存の印鑑を変更する時に使用します.', vi: 'Sử dụng khi đăng ký con dấu cá nhân mới.' },
     fee: { ko: '600원', en: '600 KRW', zh: '600 韩元', ja: '600ウォン', vi: '600 KRW' },
     requirements: { 
       ko: '인감도장, 신분증', 
       en: 'Personal seal (Stamp), ID Card', 
       zh: '印章, 身份证', 
       ja: '印鑑, 身分証明書', 
-      vi: 'Ấn dấu, Thẻ căn cước' 
+      vi: 'Con dấu cá nhân, Thẻ căn cước' 
     },
     notes: { 
       ko: '최초 신고는 반드시 본인이 방문해야 합니다.', 
@@ -437,8 +437,8 @@ export const formsList: FormItem[] = [
     cat: 'ID_SEAL',
     images: {'ko': '/forms/ko/forms_ko_25_dfd190.png', 'en': '/forms/en/forms_en_25_1ca6c9.png', 'zh': '/forms/cn/forms_cn_25_d906ef.png', 'ja': '/forms/jp/forms_jp_25_a63310.png', 'vi': '/forms/vi/forms_vi_25_7ee0d4.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_25_ca424e.png', '/guides/ko/guides_ko_25_51e8f5.png'], 'en': ['/guides/en/guides_en_25_31ae45.png', '/guides/en/guides_en_25_508923.png', '/guides/en/guides_en_25_686c71.png'], 'zh': ['/guides/cn/guides_cn_25_087d57.png', '/guides/cn/guides_cn_25_f1de85.png', '/guides/cn/guides_cn_25_4051b5.png'], 'vi': ['/guides/vi/guides_vi_25_bef263.png', '/guides/vi/guides_vi_25_3352c7.png', '/guides/vi/guides_vi_25_1cd5f9.png']},
-    title: { ko: '인감증명 위임장', en: 'POA for Seal Certificate', zh: '印章证明委托书', ja: '印鑑証明委任状', vi: 'Giấy ủy quyền ấn dấu' },
-    desc: { ko: '대리인이 인감증명을 발급받을 때 작성합니다.', en: 'Written when a representative gets a seal certificate.', zh: '由代理人领取印章证明时填写. ', ja: '代理人が印鑑証明を受け取る時に作成します.', vi: 'Lập khi người đại diện đi lấy chứng nhận ấn dấu.' },
+    title: { ko: '인감증명 위임장', en: 'POA for Seal Certificate', zh: '印章证明委托书', ja: '印鑑証明委任状', vi: 'Giấy ủy quyền cấp giấy chứng nhận con dấu' },
+    desc: { ko: '대리인이 인감증명을 발급받을 때 작성합니다.', en: 'Written when a representative gets a seal certificate.', zh: '由代理人领取印章证明时填写. ', ja: '代理人が印鑑証明を受け取る時に作成します.', vi: 'Lập khi người đại diện đi lấy chứng nhận con dấu cá nhân.' },
     fee: { ko: '600원', en: '600 KRW', zh: '600 韩元', ja: '600ウォン', vi: '600 KRW' },
     requirements: { 
       ko: '위임자 신분증, 수임인 신분증, 위임장', 
@@ -453,8 +453,8 @@ export const formsList: FormItem[] = [
     cat: 'ID_SEAL',
     images: {'ko': '/forms/ko/forms_ko_26_2fdfa5.png', 'en': '/forms/en/forms_en_26_b4dee6.png', 'zh': '/forms/cn/forms_cn_26_c5db91.png', 'ja': '/forms/jp/forms_jp_26_ac3cae.png', 'vi': '/forms/vi/forms_vi_26_7cdea9.png'},
     guideImages: {'ko': ['/guides/ko/guides_ko_26_2fdfa5.png'], 'en': ['/guides/en/guides_en_26_d32291.png', '/guides/en/guides_en_26_8a6e12.png', '/guides/en/guides_en_26_fe1d9b.png'], 'zh': ['/guides/cn/guides_cn_26_c7dd4e.png', '/guides/jp/guides_jp_26_d83950.png', '/guides/jp/guides_jp_26_4bd0bd.png', '/guides/jp/guides_jp_26_e4662b.png'], 'ja': ['/guides/jp/guides_jp_26_90f2b2.png'], 'vi': ['/guides/vi/guides_vi_26_54b884.png', '/guides/vi/guides_vi_26_86f745.png', '/guides/vi/guides_vi_26_de1375.png']},
-    title: { ko: '인감 상태 변경 신고서', en: 'Seal Status Change', zh: '印章状态变更', ja: '印鑑状態変更', vi: 'Báo cáo trạng thái ấn dấu' },
-    desc: { ko: '인감의 말소, 부활, 사망 신고 등을 할 때 제출합니다.', en: 'Submitted for cancellation or restoration of a seal.', zh: '进行印章的注销、恢复、死亡申报等. ', ja: '印鑑の抹消, 復活, 死亡届などをする時に提出します.', vi: 'Nộp khi báo cáo hủy hoặc khôi phục ấn dấu.' },
+    title: { ko: '인감 상태 변경 신고서', en: 'Seal Status Change', zh: '印章状态变更', ja: '印鑑状態変更', vi: 'Báo cáo trạng thái con dấu cá nhân' },
+    desc: { ko: '인감의 말소, 부활, 사망 신고 등을 할 때 제출합니다.', en: 'Submitted for cancellation or restoration of a seal.', zh: '进行印章的注销、恢复、死亡申报等. ', ja: '印鑑の抹消, 復活, 死亡届などをする時に提出します.', vi: 'Nộp khi báo cáo hủy hoặc khôi phục con dấu cá nhân.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '신분증, 사유 증빙 서류', 
@@ -651,7 +651,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_37_1d0958.png', 'en': '/forms/en/forms_en_37_7bd1bf.png', 'zh': '/forms/cn/forms_cn_37_0bf15c.png', 'ja': '/forms/jp/forms_jp_37_914a52.png', 'vi': '/forms/vi/forms_vi_37_db2a1c.png'},
     guideImages: {'en': ['/guides/en/guides_en_37_95908d.png', '/guides/en/guides_en_37_dc85af.png'], 'vi': ['/guides/vi/guides_vi_37_2e5e0d.png', '/guides/vi/guides_vi_37_584fee.png']},
     title: { ko: '이륜자동차사용신고서', en: 'Motorcycle Registration', zh: '二轮汽车使用申报', ja: '二輪自動車使用届', vi: 'Báo cáo sử dụng xe máy' },
-    desc: { ko: '오토바이를 새로 구입하여 신고할 때 제출합니다.', en: 'Submitted to register a new motorcycle.', zh: '新购买摩托车进行使用申报. ', ja: 'バイクを新しく購入して使用届を出す時に提出します.', vi: 'Đăng ký sử dụng xe máy mới.' },
+    desc: { ko: '오토바이를 새로 구입하여 신고할 때 제출합니다.', en: 'Submitted to register a new motorcycle.', zh: '新购买摩托车进行使用申报. ', ja: 'バイクを新しく購入して使用届を出す時に提出します。', vi: 'Đăng ký sử dụng xe máy mới.' },
     fee: { ko: '비용 발생 (취득세 등)', en: 'Costs incurred (Taxes, etc.)', zh: '产生费用 (购置税等)', ja: '費用発生 (取得税など)', vi: 'Phát sinh chi phí (Thuế...)' },
     requirements: { 
       ko: '이륜차 제작증, 보험가입증명서, 신분증', 
@@ -667,7 +667,7 @@ export const formsList: FormItem[] = [
     images: {'ko': '/forms/ko/forms_ko_38_895521.png', 'en': '/forms/en/forms_en_38_c7435b.png', 'zh': '/forms/cn/forms_cn_38_b8d9ea.png', 'ja': '/forms/jp/forms_jp_38_62a7a8.png', 'vi': '/forms/vi/forms_vi_38_3ab23b.png'},
     guideImages: {'en': ['/guides/en/guides_en_38_cf8512.png', '/guides/en/guides_en_38_a3c170.png'], 'vi': ['/guides/vi/guides_vi_38_a356d2.png']},
     title: { ko: '이륜자동차사용폐지신고서', en: 'Motorcycle Disuse Report', zh: '二轮汽车废止申报', ja: '二輪自動車使用廃止届', vi: 'Hủy sử dụng xe máy' },
-    desc: { ko: '오토바이 사용을 중단하거나 폐기할 때 신고합니다.', en: 'Report stopping or scrapping a motorcycle.', zh: '停止使用或报废摩托车时申报. ', ja: 'バイクの使用を中断したり廃棄したりする時に届け出ます.', vi: 'Báo cáo hủy sử dụng xe máy.' },
+    desc: { ko: '오토바이 사용을 중단하거나 폐기할 때 신고합니다.', en: 'Report stopping or scrapping a motorcycle.', zh: '停止使用或报废摩托车时申报. ', ja: 'バイクの使用を中断または廃棄する時に届け出ます。', vi: 'Báo cáo hủy sử dụng xe máy.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
       ko: '사용신고필증, 번호판 반납, 신분증', 
@@ -682,7 +682,7 @@ export const formsList: FormItem[] = [
     cat: 'VEHICLE',
     images: {'ko': '/forms/ko/forms_ko_39_e0c0fc.png', 'en': '/forms/en/forms_en_39_6fc89d.png', 'zh': '/forms/cn/forms_cn_39_524886.png', 'ja': '/forms/jp/forms_jp_39_7aff7c.png', 'vi': '/forms/vi/forms_vi_39_5d5b25.png'},
     guideImages: {'en': ['/guides/en/guides_en_39_8b3e62.png', '/guides/en/guides_en_39_881c44.png'], 'vi': ['/guides/vi/guides_vi_39_ac435b.png', '/guides/vi/guides_vi_39_85e6a7.png']},
-    title: { ko: '이륜자동차변경신청서', en: 'Motorcycle Change App', zh: '二轮汽车变更申请', ja: '二輪自動車変更申請', vi: 'Thay đổi báo cáo xe máy' },
+    title: { ko: '이륜자동차변경신청서', en: 'Motorcycle Change App', zh: '二轮汽车变更申请', ja: '二輪自動車変更申請', vi: 'Đơn thay đổi thông tin xe máy' },
     desc: { ko: '오토바이 소유자 정보 등 변경 사항이 있을 때 신청합니다.', en: 'Apply when there are changes in owner info.', zh: '摩托车所有者地址等有变更事项. ', ja: 'バイクの所有者の住所など変更がある時に申請します.', vi: 'Thay đổi thông tin báo cáo xe máy.' },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 

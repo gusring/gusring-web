@@ -12,7 +12,7 @@ interface Sec  { id: string; label: I18n; color: string; startDeg: number; endDe
 const SECTIONS: Sec[] = [
   {
     id: 'vehicle', color: '#1e3170',
-    label: { ko: '자동차민원', en: 'Vehicle Affairs', zh: '汽车民愿', ja: '自動車民願', vi: 'Xe cơ giới' },
+    label: { ko: '자동차민원', en: 'Vehicle Affairs', zh: '汽车民愿', ja: '自動車民願', vi: 'Thủ tục hành chính về ô tô' },
     startDeg: 215, endDeg: 252,
     windows: [
       {

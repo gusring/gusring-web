@@ -195,7 +195,7 @@ const DetailView: React.FC<Props> = ({ form, t, lang }) => {
                 <div>
                   <h4 className="text-[13px] font-bold text-gusring-text mb-1 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-gusring-yellow rounded-full"></span>
-                    {t({ ko: '준비물', en: 'Requirements', zh: '准备物', ja: '準備物', vi: 'Yêu cầu' })}
+                    {t({ ko: '준비물', en: 'Requirements', zh: '准备物', ja: '準備物', vi: 'Giấy tờ cần chuẩn bị' })}
                   </h4>
                   <p className="text-[13px] text-gusring-text-sub ml-3.5">{t(form.requirements as I18nString)}</p>
                 </div>

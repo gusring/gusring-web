@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Search, FileText, ChevronRight } from 'lucide-react';
 import { categories } from '../data/categories';
 import { UIStrings } from '../../../data/strings';
 import { FormItem, I18nString, LangId } from '../../../shared/types';
-import { trackSearch, trackCategoryFilter } from '../../../shared/analytics';
+import { trackCategoryFilter } from '../../../shared/analytics';
 
 interface Props {
   t: (obj: I18nString) => string;
@@ -21,17 +21,7 @@ const ListView: React.FC<Props> = ({
   selectedCategory, onCategoryChange,
   filteredForms, onFormSelect,
 }) => {
-  // 검색어 300ms debounce 후 GA 전송
-  const searchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    if (searchTimerRef.current) clearTimeout(searchTimerRef.current);
-    searchTimerRef.current = setTimeout(() => {
-      trackSearch({ term: searchTerm, resultCount: filteredForms.length, lang });
-    }, 300);
-    return () => { if (searchTimerRef.current) clearTimeout(searchTimerRef.current); };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchTerm, filteredForms.length]);
+  // 검색어 기록은 App.tsx에서 한 번만 보낸다 (여기서도 보내면 검색 1번이 2번으로 잡혔다)
 
   const handleCategoryChange = (cat: string) => {
     trackCategoryFilter(cat, lang);

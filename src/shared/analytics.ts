@@ -4,7 +4,12 @@
  * 측정 ID 변경 방법:
  *   1. analytics.google.com → 속성 만들기 → 측정 ID 발급 (G-XXXXXXXXXX)
  *   2. public/index.html 의 'G-XXXXXXXXXX' 두 곳을 실제 ID로 교체
+ *
+ * 구스링 백엔드(gusring-server)에도 같은 지점의 이용 기록을 같이 보낸다 (track, ./gusring-api).
+ * GA4는 그대로 유지한다. 서식 제목은 백엔드로 보내지 않는다 (서버는 서식 번호로 센다).
  */
+
+import { track, type Lang } from './gusring-api';
 
 // ── gtag 타입 선언 ───────────────────────────────────────────
 declare global {
@@ -30,6 +35,7 @@ export function trackLandingView(): void {
     page_location: window.location.href,
     page_path:     '/landing',
   });
+  track({ type: 'landing_view' });
 }
 
 /** 서식 목록 화면 진입 */
@@ -40,6 +46,7 @@ export function trackListView(lang: string): void {
     page_path:     '/list',
     language:      lang,
   });
+  track({ type: 'list_view', lang: lang as Lang });
 }
 
 /** 서식 상세 화면 진입 */
@@ -58,6 +65,7 @@ export function trackDetailView(params: {
     category:      params.category,
     language:      params.lang,
   });
+  track({ type: 'form_view', lang: params.lang as Lang, formNo: params.formId, category: params.category });
 }
 
 // ── 언어 선택 ────────────────────────────────────────────────
@@ -65,6 +73,7 @@ export function trackDetailView(params: {
 /** 언어 선택 */
 export function trackLanguageSelect(lang: string): void {
   send('language_select', { language: lang });
+  track({ type: 'language_select', lang: lang as Lang });
 }
 
 // ── 서식 관련 ────────────────────────────────────────────────
@@ -82,6 +91,7 @@ export function trackFormDownload(params: {
     category:   params.category,
     language:   params.lang,
   });
+  track({ type: 'form_download', lang: params.lang as Lang, formNo: params.formId, category: params.category });
 }
 
 // ── 검색 & 필터 ──────────────────────────────────────────────
@@ -98,11 +108,13 @@ export function trackSearch(params: {
     result_count:  params.resultCount,
     language:      params.lang,
   });
+  track({ type: 'search', lang: params.lang as Lang, searchTerm: params.term, resultCount: params.resultCount });
 }
 
 /** 카테고리 필터 선택 */
 export function trackCategoryFilter(category: string, lang: string): void {
   send('category_filter', { category, language: lang });
+  track({ type: 'category_filter', lang: lang as Lang, category });
 }
 
 // ── 버튼 클릭 ────────────────────────────────────────────────
@@ -110,6 +122,7 @@ export function trackCategoryFilter(category: string, lang: string): void {
 /** 피드백 버튼 클릭 */
 export function trackFeedbackClick(lang: string): void {
   send('feedback_click', { language: lang });
+  track({ type: 'feedback_click', lang: lang as Lang });
 }
 
 // ── 체류 시간 ────────────────────────────────────────────────
@@ -127,4 +140,5 @@ export function trackTimeOnDetail(params: {
     duration_sec: params.durationSec,
     language:     params.lang,
   });
+  track({ type: 'detail_time', lang: params.lang as Lang, formNo: params.formId, durationSec: params.durationSec });
 }

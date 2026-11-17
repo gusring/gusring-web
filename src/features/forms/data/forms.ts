@@ -506,7 +506,7 @@ export const formsList: FormItem[] = [
   {
     id: 29,
     cat: 'CERT',
-    images: {'en': '/forms/en/forms_en_29_f41520.png', 'zh': '/forms/cn/forms_cn_29_c0098f.png', 'ja': '/forms/jp/forms_jp_29_91e4c4.png', 'vi': '/forms/vi/forms_vi_29_1858fa.png'},
+    images: {'en': '/forms/en/forms_en_29_f41520.png', 'zh': '/forms/cn/forms_cn_30_cb8b8b.png', 'ja': '/forms/jp/forms_jp_29_91e4c4.png', 'vi': '/forms/vi/forms_vi_29_1858fa.png'},
     guideImages: {'en': ['/guides/en/guides_en_29_e61805.png', '/guides/en/guides_en_29_0c21b6.png'], 'vi': ['/guides/vi/guides_vi_29_981eda.png', '/guides/vi/guides_vi_29_de8ad7.png']},
     title: { ko: '출입국사실증명서', en: 'Entry/Exit Certificate', zh: '出入境事实证明', ja: '出入国事実証明', vi: 'Giấy chứng nhận xuất nhập cảnh' },
     desc: { ko: '일정 기간 동안의 출입국 기록을 증명받기 위해 신청합니다.', en: 'Request to prove entry/exit records.', zh: '证明一定期间内的出入境记录. ', ja: '一定期間の出入国記録を証明してもらうために申請します.', vi: 'Xác nhận lịch sử xuất nhập cảnh.' },
@@ -522,7 +522,7 @@ export const formsList: FormItem[] = [
   {
     id: 30,
     cat: 'RESIDENCE',
-    images: {'zh': '/forms/cn/forms_cn_30_cb8b8b.png', 'ja': '/forms/jp/forms_jp_30_f6df73.png', 'vi': '/forms/vi/forms_vi_30_3f8dd2.png'},
+    images: {'zh': '/forms/cn/forms_cn_29_c0098f.png', 'ja': '/forms/jp/forms_jp_30_f6df73.png', 'vi': '/forms/vi/forms_vi_30_3f8dd2.png'},
     guideImages: {'zh': ['/guides/cn/guides_cn_30_a4a866.png', '/guides/cn/guides_cn_30_d39d69.png', '/guides/cn/guides_cn_30_5c938f.png'], 'vi': ['/guides/vi/guides_vi_30_c3dcb6.png', '/guides/vi/guides_vi_30_8503f8.png']},
     title: { ko: '출입국사실증명 위임장', en: 'POA for Entry/Exit Cert', zh: '出入境证明委托', ja: '出入国証明委任', vi: 'Ủy quyền cấp giấy XNC' },
     desc: { ko: '출입국 사실증명서 발급을 대리인에게 맡길 때 작성합니다.', en: 'To delegate entry/exit certificate issuance.', zh: '将出入境事实证明书的发放交给代理人. ', ja: '出入国事実証明書の発行を代理人に任せる時に作成します.', vi: 'Ủy quyền lấy giấy chứng nhận xuất nhập cảnh.' },
